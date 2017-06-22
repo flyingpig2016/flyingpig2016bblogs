@@ -15,7 +15,7 @@
 <meta property="og:url" content="//www.iambangbang.club/2017/06/22/yilia配置/index.html">
 <meta property="og:site_name" content="flyingpig的博客">
 <meta property="og:description" content="学会摆弄yilia主题###第一点：学会用hexo添加新文章123hexo new &apos;yilia配置&apos;hexo ghexo d 通过上面的命令，然后就可以生成yilia配置为标题的微博到页面上">
-<meta property="og:updated_time" content="2017-06-22T04:02:31.225Z">
+<meta property="og:updated_time" content="2017-06-22T04:26:12.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="yilia配置">
 <meta name="twitter:description" content="学会摆弄yilia主题###第一点：学会用hexo添加新文章123hexo new &apos;yilia配置&apos;hexo ghexo d 通过上面的命令，然后就可以生成yilia配置为标题的微博到页面上">
@@ -83,13 +83,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/flyingpig2016" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
 		</nav>
@@ -126,13 +122,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/flyingpig2016" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -176,6 +168,33 @@
         
       </header>
     
+            <!-- 目录内容 -->
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+                <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+                <strong class="toc-title">文章目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#学会摆弄yilia主题"><span class="toc-number">1.</span> <span class="toc-text">学会摆弄yilia主题</span></a></li></ol>
+           </div>
+           <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+                };
+            function showBtn(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:none");
+                show_toc_btn.setAttribute("style","display:block");
+                };
+           </script>
+             
+        <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="学会摆弄yilia主题"><a href="#学会摆弄yilia主题" class="headerlink" title="学会摆弄yilia主题"></a>学会摆弄yilia主题</h2><p>###第一点：学会用hexo添加新文章<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">'yilia配置'</span></div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
@@ -274,8 +293,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2017/06/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2017/06/21/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hello world</div>
       <i class="icon-circle-right"></i>
     </a>
   
