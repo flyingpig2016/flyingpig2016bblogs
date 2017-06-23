@@ -15,11 +15,11 @@
                 var begin = (page - 1) * this.offset;
                 var end = page * this.offset;
                 if (begin >= data.length) return;
-                var html, li = "";
+                var html, li = "";               
                 for (var i = begin; i < end && i < data.length; i++) {
                     li += '<li><div class="img-box">' +
-                        '<a class="img-bg" rel="example_group" href="https://github.com/lwzhang/blog/blob/master/photos/' + data[i] + '?raw=true"></a>' +
-                        '<img lazy-src="https://github.com/lwzhang/blog/blob/master/photos/' + data[i] + '?raw=true" />' +
+                        '<a class="img-bg" rel="example_group" href="https://github.com/flyingpig2016/flyingpig2016.github.io/blob/master/img/' + data[i] + '?raw=true"></a>' +
+                        '<img lazy-src="https://github.com/flyingpig2016/flyingpig2016.github.io/blob/master/img/' + data[i] + '?raw=true" />' +
                         '</li>';
                 }
 
