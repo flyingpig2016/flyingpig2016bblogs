@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="flyingpig">
 <meta property="og:description" content="mongoDB常用命令1. 展示数据库：show dbs；2. 显示当前数据库对象或集合：db;3. 连接到一个指定的数据库:  use;4. 关系型数据库和mongodb的术语： 5. 集合就是 MongoDB 文档组，类似于 RDBMS中的表格，例如：123&amp;#123;&quot;site&quot;:&quot;www.baidu.com&quot;&amp;#125;&amp;#123;&quot;site&quot;:&quot;www.google.com&quot;,&quot;name">
 <meta property="og:image" content="http://img.blog.csdn.net/20170610182030359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmx5aW5ncGlnMjAxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-07-02T08:31:22.566Z">
+<meta property="og:updated_time" content="2017-07-02T16:24:18.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongodb常用命令学习">
 <meta name="twitter:description" content="mongoDB常用命令1. 展示数据库：show dbs；2. 显示当前数据库对象或集合：db;3. 连接到一个指定的数据库:  use;4. 关系型数据库和mongodb的术语： 5. 集合就是 MongoDB 文档组，类似于 RDBMS中的表格，例如：123&amp;#123;&quot;site&quot;:&quot;www.baidu.com&quot;&amp;#125;&amp;#123;&quot;site&quot;:&quot;www.google.com&quot;,&quot;name">
@@ -179,6 +179,30 @@
       </header>
     
             <!-- 目录内容 -->
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+                <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+                <strong class="toc-title">文章目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mongoDB常用命令"><span class="toc-number">1.</span> <span class="toc-text">mongoDB常用命令</span></a></li></ol>
+           </div>
+           <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+                };
+            function showBtn(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:none");
+                show_toc_btn.setAttribute("style","display:block");
+                };
+           </script>
              
         <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
@@ -459,11 +483,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">notes</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color1">notes</a>
               </li>
              
               <li class="article-tag-list-item">
