@@ -17,7 +17,7 @@
 <meta property="og:description" content="对JavaScript中原型模式的理解一：什么是原型对象？有什么优点？**&amp;emsp;&amp;emsp; 简单的来说，无论何时，我们创建的每一个函数都有一个prototype属性，这个属性是一个指针，指向一个对象，这个对象包含了通过调用该构造函数所创建的对象共享的属性和方法。其实我们平常的叫法就是指：prototype就是通过该构造函数创建的某个实例的原型对象，但是其实prototype是每个构造函数的">
 <meta property="og:image" content="http://img.blog.csdn.net/20170514170752175?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmx5aW5ncGlnMjAxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20170514170806065?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmx5aW5ncGlnMjAxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-07-10T05:46:17.453Z">
+<meta property="og:updated_time" content="2017-07-14T10:54:15.481Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解prototyp">
 <meta name="twitter:description" content="对JavaScript中原型模式的理解一：什么是原型对象？有什么优点？**&amp;emsp;&amp;emsp; 简单的来说，无论何时，我们创建的每一个函数都有一个prototype属性，这个属性是一个指针，指向一个对象，这个对象包含了通过调用该构造函数所创建的对象共享的属性和方法。其实我们平常的叫法就是指：prototype就是通过该构造函数创建的某个实例的原型对象，但是其实prototype是每个构造函数的">
@@ -244,7 +244,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="对JavaScript中原型模式的理解"><a href="#对JavaScript中原型模式的理解" class="headerlink" title="对JavaScript中原型模式的理解"></a>对JavaScript中原型模式的理解</h2><h3 id="一：什么是原型对象？有什么优点？"><a href="#一：什么是原型对象？有什么优点？" class="headerlink" title="一：什么是原型对象？有什么优点？**"></a>一：什么是原型对象？有什么优点？**</h3><p>&emsp;&emsp; 简单的来说，无论何时，我们创建的每一个函数都有一个prototype属性，这个属性是一个指针，指向一个对象，这个对象包含了通过调用该构造函数所创建的对象共享的属性和方法。其实我们平常的叫法就是指：<strong>prototype就是通过该构造函数创建的某个实例的原型对象</strong>，但是其实prototype是每个构造函数的属性而已，只能说万物皆对象罢了。<br>&emsp;&emsp; 原型对象的优点是：所有的对象实例都可以共享它包含的属性和方法。这一点可以在构造函数里就可以看出来，因为构造函数在函数里面就定义了对象的实例信息，而原型对象可以在任何地方定义属性和方法。例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">Person.prototype.name = <span class="string">'bangbang'</span>;</div><div class="line">Person.prototype.age = <span class="number">18</span>;</div><div class="line">Person.prototype.job = <span class="string">'programmer'</span>;</div><div class="line">Person.prototype.dream = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'Change yourself'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</div><div class="line">person1.dream();	<span class="comment">//Change yourself</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</div><div class="line">person2.dream();</div><div class="line"><span class="comment">//判断两个实例继承的方法和属性是否全等</span></div><div class="line"><span class="built_in">console</span>.log(person1.dream === person2.dream);</div><div class="line"><span class="built_in">console</span>.log(person1.age === person2.age);</div></pre></td></tr></table></figure></p>
-<p>由以上的代码可以看出它比构造函数方法的好处就是，person1和person2访问的都是同一个dream()函数，即他们的属性和方法都是共享的。</p>
+<p>由以上的代码可以看出它比构造函数方法的好处就是，person1和person2访问的都是同一个dream()函数，即他们的属性和方法都是共享的。<br><a id="more"></a></p>
 <h3 id="二：深入理解原型对象和prototype？"><a href="#二：深入理解原型对象和prototype？" class="headerlink" title="二：深入理解原型对象和prototype？**"></a>二：深入理解原型对象和prototype？**</h3><p>&emsp;&emsp;由上面可知，我们创建了一个函数，就会根据ECMAscript特定的规则为该函数创建一个prototype属性，这个属性指向函数的原型对象。在默认情况下，所有原型对象都会自动获得一个constructor(构造函数)属性，这个属性是一个指向prototype属性所在函数的指针。就像前面的例子，Person.prototype.constructor指向Person，而通过这个构造函数，我们还可以继续为原型对象添加其他属性和方法。<br>&emsp;&emsp;下面，我们就开始从原理上说明上面代码运行机制的：</p>
 <ol>
 <li>创建一个自定义的构造函数后，它的原型对象默认只会有constructor属性，其他属性和方法都是从Object继承而来的；</li>
@@ -511,7 +511,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端自动化工具</a>
+                <a href="javascript:void(0)" class="js-tag color5">Angularjs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,7 +519,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Angularjs</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端自动化工具</a>
               </li>
              
               <li class="article-tag-list-item">
