@@ -194,20 +194,20 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-AngularJs中ui-router使用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-01note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/14/AngularJs中ui-router使用方法/">AngularJs中ui.router使用方法</a>
+      <a class="article-title" href="/2017/06/22/01note/">01note</a>
     </h1>
   
 
         
-        <a href="/2017/07/14/AngularJs中ui-router使用方法/" class="archive-article-date">
-  	<time datetime="2017-07-14T10:39:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-14</time>
+        <a href="/2017/06/22/01note/" class="archive-article-date">
+  	<time datetime="2017-06-22T15:18:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
 </a>
         
       </header>
@@ -217,11 +217,8 @@ var _hmt = _hmt || [];
         <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一：为什么使用ui-router？"><a href="#一：为什么使用ui-router？" class="headerlink" title="一：为什么使用ui-router？"></a>一：为什么使用ui-router？</h3><p>&emsp;&emsp;如果使用原生router的话，也就是当我们在index.html页面引用<code>angular-route.js</code>的时候，例如：我们在index.html页面的<code>body</code>下加入<code>&lt;div class=&quot;page &quot; ng-view&gt;&lt;/div&gt;</code>，然后我们在<code>app.js</code>中写入（具体代码看文章末尾的下载链接）：<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var bookStoreApp = angular.module(<span class="string">'bookStoreApp'</span>, [</div><div class="line">    <span class="string">'ngRoute'</span>, <span class="string">'ngAnimate'</span>, <span class="string">'bookStoreCtrls'</span>, <span class="string">'bookStoreFilters'</span>,</div><div class="line">    <span class="string">'bookStoreServices'</span>, <span class="string">'bookStoreDirectives'</span></div><div class="line">]);</div><div class="line"></div><div class="line">bookStoreApp.config(<span class="keyword">function</span>($routeProvider) &#123;</div><div class="line">    $routeProvider.when(<span class="string">'/hello'</span>, &#123;</div><div class="line">        templateUrl: <span class="string">'tpls/hello.html'</span>,</div><div class="line">        controller: <span class="string">'HelloCtrl'</span></div><div class="line">    &#125;).when(<span class="string">'/list'</span>, &#123;</div><div class="line">        templateUrl: <span class="string">'tpls/bookList.html'</span>,</div><div class="line">        controller: <span class="string">'BookListCtrl'</span></div><div class="line">    &#125;).otherwise(&#123;</div><div class="line">        redirectTo: <span class="string">'/hello'</span></div><div class="line">    &#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>此时，我们首页默认显示hello，当我们在页面中点击下一页链接的时候，我们跳转到以list为模板的页面。以上是简单的页面跳转，但是如果我们需要稍微复杂一点的页面，例如我们想要写个上面一个是菜单栏，菜单栏下面还有点击的页面，就像是选项卡一样，但是分别进入了不同的页面（实际上是angularjs路由机制中替换了某个模板），如下图所示：<br><img src="http://img.blog.csdn.net/20170714171942351?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmx5aW5ncGlnMjAxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>我们就需要用到嵌套的路由，因此，我们需要用到angularjs中ui.router模块。<br>
-        
-          <a class="article-more-a" href="/2017/07/14/AngularJs中ui-router使用方法/#more">more >></a>
-        
+        <p>这是我的note页面 </p>
+
       
 
       
@@ -234,7 +231,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Angularjs</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">notes</a>
         		</li>
       		
 		</ul>
@@ -244,7 +241,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/14/AngularJs中ui-router使用方法/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/22/01note/">展开全文 >></a>
         </p>
       
 
@@ -259,147 +256,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-js-touch事件及gesture-手势-事件详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/js-touch事件及gesture-手势-事件详解/">js touch事件及gesture(手势)事件详解</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/10/js-touch事件及gesture-手势-事件详解/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        
-      </header>
-    
-            <!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一：touch事件分类？"><a href="#一：touch事件分类？" class="headerlink" title="一：touch事件分类？"></a>一：touch事件分类？</h3><ol>
-<li>touchstart：当手指触摸屏幕时触发。不管有多少个手指放在了屏幕上，只要再触摸一下屏幕就会触发。在此，我用小米的google浏览器做了一个实验，添加一个计数器，用来查看屏幕上手指触摸的次数，代码如下：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line">	<span class="built_in">document</span>.addEventListener(<span class="string">'touchstart'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">		myDiv.innerHTML = <span class="string">'触屏的次数：'</span>+ i++;</div><div class="line">	&#125;,<span class="literal">false</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>2.touchmove：当手指在屏幕上滑动的时候触发该是事件，在这期间可以通过event.preventDefault()来阻止滚动；<br>
-        
-          <a class="article-more-a" href="/2017/07/10/js-touch事件及gesture-手势-事件详解/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/10/js-touch事件及gesture-手势-事件详解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-js工厂模式、构造函数以及他们创建对象的优缺点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/">js工厂模式、构造函数以及他们创建对象的优缺点</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:44:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        
-      </header>
-    
-            <!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="工厂模式和构造函数的区别"><a href="#工厂模式和构造函数的区别" class="headerlink" title="工厂模式和构造函数的区别"></a>工厂模式和构造函数的区别</h3><blockquote>
-<p>学习JavaScript有一段时间了，但是随着工作的进展，我发现，JavaScript绝对不是写一下简单效果那么肤浅，是时候完全，透彻地理解他的精髓了。</p>
-</blockquote>
-<p>好了，让俺老猪带你装逼带你飞吧！</p>
-<h3 id="一：为什么使用工厂模式和构造函数？"><a href="#一：为什么使用工厂模式和构造函数？" class="headerlink" title="一：为什么使用工厂模式和构造函数？**"></a>一：为什么使用工厂模式和构造函数？**</h3><p>&emsp;&emsp;虽然Object构造函数或者字面量(var person={})可以创建单个对象，但是，他有一个明显的缺点，那就是：重复造轮子，产生大量的重复性代码，为了解决这个问题，我们就开始使用工厂模式和构造函数模式。</p>
-<h3 id="二：什么是工厂模式？它有什么优缺点？"><a href="#二：什么是工厂模式？它有什么优缺点？" class="headerlink" title="二：什么是工厂模式？它有什么优缺点？**"></a>二：什么是工厂模式？它有什么优缺点？**</h3><p>&emsp;&emsp;1.顾名思义，工厂模式就是像工厂一样来创建对象。但这样的解释似乎有点欠妥，高大上一点，工厂模式其实是软件领域中一种广为人知的一种设计模式，这种模式抽象了创建具体对象的过程。开发人员发明了一种函数，用函数来大量创建对象的方法；<br>
-        
-          <a class="article-more-a" href="/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -494,6 +350,10 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">notes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Angularjs</a>
               </li>
              
@@ -507,10 +367,6 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">notes</a>
               </li>
             
             <div class="clearfix"></div>
