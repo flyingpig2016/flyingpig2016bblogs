@@ -194,79 +194,6 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-directive-自定义指令的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/directive-自定义指令的方法/">directive ——自定义指令的方法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/18/directive-自定义指令的方法/" class="archive-article-date">
-  	<time datetime="2017-07-18T03:14:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
-</a>
-        
-      </header>
-    
-            <!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><b>This is a angular-demos, It can show my progress of study.</b></p>
-<h2 id="02directive——Angularjs的创建指令方法"><a href="#02directive——Angularjs的创建指令方法" class="headerlink" title="02directive——Angularjs的创建指令方法"></a>02directive——Angularjs的创建指令方法</h2><h3 id="restrict-值分类"><a href="#restrict-值分类" class="headerlink" title="restrict 值分类:"></a>restrict 值分类:</h3><ul>
-<li>E 作为元素名使用,例如：<code>&lt;hello&gt;&lt;/hello&gt;</code>  </li>
-<li>A 作为属性使用(默认),例如：<code>&lt;div hello&gt;&lt;/div&gt;</code></li>
-<li>C 作为类名使用 , 例如：<code>&lt;div class=&quot;hello&quot;&gt;&lt;/div&gt;</code></li>
-<li>M 作为注释使用,  例如：<code>&lt;!--directive:hello--&gt;</code><h3 id="directive的templateUrl属性"><a href="#directive的templateUrl属性" class="headerlink" title="directive的templateUrl属性"></a>directive的templateUrl属性</h3>通常我们这样写，template，但是如果模板里面东西很多，我们就需要独立出来一个html文件，<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">myApp.directive(<span class="string">'hello'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span>&#123;</div><div class="line">        restrict : <span class="string">'AEMC'</span>, <span class="comment">//- A 作为属性使用(默认),例如：`&lt;div hello&gt;&lt;/div&gt;`</span></div><div class="line">        template : <span class="string">'&lt;div&gt;Hello everyone, I am bangbang!&lt;/div&gt;'</span>,</div><div class="line">        replace : <span class="keyword">true</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>用templateUrl属性独立出html文件,<strong>注意：</strong>如果用longDirective命名，引用的时候用<code>&lt;long-directive&gt;&lt;/long-directive&gt;</code>,要不然就用纯小写字母</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">myApp.directive(<span class="string">'longDirective'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        restrict : <span class="string">'AEMC'</span>,  <span class="comment">//- E 作为元素名使用,例如：`&lt;hello&gt;&lt;/hello&gt;`  </span></div><div class="line">        templateUrl : <span class="string">'tpls/long.html'</span>,</div><div class="line">        replace : <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/07/18/directive-自定义指令的方法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Angularjs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/18/directive-自定义指令的方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
     <article id="post-AngularJs中ui-router使用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -274,7 +201,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/14/AngularJs中ui-router使用方法/">AngularJs中ui.router使用方法</a>
+      <a class="article-title" href="/2017/07/14/AngularJs中ui-router使用方法/">AngularJs中ui-router使用方法</a>
     </h1>
   
 
@@ -332,20 +259,20 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-js-touch事件及gesture-手势-事件详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-01note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/js-touch事件及gesture-手势-事件详解/">js touch事件及gesture(手势)事件详解</a>
+      <a class="article-title" href="/2017/06/22/01note/">01note</a>
     </h1>
   
 
         
-        <a href="/2017/07/10/js-touch事件及gesture-手势-事件详解/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
+        <a href="/2017/06/22/01note/" class="archive-article-date">
+  	<time datetime="2017-06-22T15:18:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
 </a>
         
       </header>
@@ -355,14 +282,8 @@ var _hmt = _hmt || [];
         <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一：touch事件分类？"><a href="#一：touch事件分类？" class="headerlink" title="一：touch事件分类？"></a>一：touch事件分类？</h3><ol>
-<li>touchstart：当手指触摸屏幕时触发。不管有多少个手指放在了屏幕上，只要再触摸一下屏幕就会触发。在此，我用小米的google浏览器做了一个实验，添加一个计数器，用来查看屏幕上手指触摸的次数，代码如下：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line">	<span class="built_in">document</span>.addEventListener(<span class="string">'touchstart'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">		myDiv.innerHTML = <span class="string">'触屏的次数：'</span>+ i++;</div><div class="line">	&#125;,<span class="literal">false</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>2.touchmove：当手指在屏幕上滑动的时候触发该是事件，在这期间可以通过event.preventDefault()来阻止滚动；<br>
-        
-          <a class="article-more-a" href="/2017/07/10/js-touch事件及gesture-手势-事件详解/#more">more >></a>
-        
+        <p>这是我的note页面 </p>
+
       
 
       
@@ -375,7 +296,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">notes</a>
         		</li>
       		
 		</ul>
@@ -385,7 +306,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/10/js-touch事件及gesture-手势-事件详解/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/22/01note/">展开全文 >></a>
         </p>
       
 
@@ -400,10 +321,6 @@ var _hmt = _hmt || [];
 
 
   
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -502,15 +419,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javascript高级程序设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Angularjs</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端自动化工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javascript高级程序设计</a>
               </li>
             
             <div class="clearfix"></div>
