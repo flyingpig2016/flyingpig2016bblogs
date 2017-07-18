@@ -194,6 +194,73 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-详解callee和caller-apply-和call的用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/10/详解callee和caller-apply-和call的用法/">详解callee和caller,apply()和call的用法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/10/详解callee和caller-apply-和call的用法/" class="archive-article-date">
+  	<time datetime="2017-07-10T05:31:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
+</a>
+        
+      </header>
+    
+            <!-- 目录内容 -->
+             
+        <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一：函数内部的对象：arguments和this"><a href="#一：函数内部的对象：arguments和this" class="headerlink" title="一：函数内部的对象：arguments和this**"></a>一：函数内部的对象：arguments和this**</h3><p>&emsp;&emsp;我们都知道js中arguments对象主要是保存函数的参数(如果不知道arguments，在有参数的函数中输出一下就知道了)，但是这个对象还有一个属性为callee，它是一个指针，指向拥有这个arguments对象的函数。例如阶乘函数：<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function <span class="built_in">factorial</span>(<span class="built_in">num</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">num</span> &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="built_in">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">return</span> <span class="built_in">num</span> * <span class="built_in">factorial</span>(<span class="built_in">num</span>-<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">factorial</span>(<span class="number">5</span>));//<span class="number">120</span></div></pre></td></tr></table></figure></p>
+<p>由于函数的执行和函数名factorial紧紧耦合在了一起，为了消除这种紧密耦合的现象，可以使用arguments.callee:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial2</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> num * <span class="built_in">arguments</span>.callee(num<span class="number">-1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(factorial2(<span class="number">5</span>)); <span class="comment">//120</span></div></pre></td></tr></table></figure></p>
+<p>两者的区别如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> trueFactorial = factorial2;</div><div class="line">factorial = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(trueFactorial(<span class="number">6</span>)); <span class="comment">//720</span></div><div class="line"><span class="built_in">console</span>.log(factorial(<span class="number">6</span>));      <span class="comment">//0</span></div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;上面的trueFactorial实际上是在另一个位置上保存了一个函数的指针。然后又将一个简单的函数赋值给factorial变量。如果不用arguments.callee，那么，调用trueFactorial(6)的时候就返回0.但是上面的例子解除了代码和函数的耦合状态，因此trueFactorial仍然可以正常的计算阶乘。<br>
+        
+          <a class="article-more-a" href="/2017/07/10/详解callee和caller-apply-和call的用法/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/10/详解callee和caller-apply-和call的用法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-gulp的实时刷新、代码压缩、代码排错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -322,67 +389,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-resume" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/02/resume/">resume</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/02/resume/" class="archive-article-date">
-  	<time datetime="2017-07-02T08:23:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-02</time>
-</a>
-        
-      </header>
-    
-            <!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/resume/" class="article-tag-list-link color2">resume</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/02/resume/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -481,11 +487,11 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Angularjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">notes</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端自动化工具</a>
+                <a href="javascript:void(0)" class="js-tag color5">Angularjs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -497,7 +503,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">notes</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端自动化工具</a>
               </li>
             
             <div class="clearfix"></div>
