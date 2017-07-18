@@ -194,6 +194,67 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-link属性使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/18/link属性使用/">link属性使用</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/18/link属性使用/" class="archive-article-date">
+  	<time datetime="2017-07-18T04:52:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
+</a>
+        
+      </header>
+    
+            <!-- 目录内容 -->
+             
+        <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Angular中指令与控制器之间的交互，（link属性使用）"><a href="#Angular中指令与控制器之间的交互，（link属性使用）" class="headerlink" title="Angular中指令与控制器之间的交互，（link属性使用）"></a>Angular中指令与控制器之间的交互，（link属性使用）</h2><p>&emsp;&emsp;link属性值为一个函数,link函数主要用于操作dom元素,给dom元素绑定事件和监听,这个函数有五个参数:scope,element,attrs,ctrl,linker</p>
+<ul>
+<li>scope: 指令所在的作用域,这个scope和指令定义的scope是一致的.至于指令的scope,会在讲解scope属性的时候详细解释</li>
+<li>element: 指令元素的jqLite封装.(也就是说iEle可以调用angular封装的简版jq的方法和属性.)</li>
+<li>attrs: 指令元素的属性的集合</li>
+<li>ctrl : 需要和require属性一起使用,用于调用其他指令的方法,指令之间的互相通信,这个在讲require属性的时候会详细解释</li>
+<li>linker:也就是transclude()函数,可以用于得到指令中需要被嵌入的html内容</li>
+</ul>
+<h3 id="认识link属性的scope、element、attrs方法？"><a href="#认识link属性的scope、element、attrs方法？" class="headerlink" title="认识link属性的scope、element、attrs方法？"></a>认识link属性的scope、element、attrs方法？</h3><p>下面举个例子：<br>当我们在01link.html加入：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">"myCtrl"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">loader"</span>&gt;</span>滑动加载<span class="tag">&lt;/<span class="name">loader</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2017/07/18/link属性使用/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/18/link属性使用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-AngularJs中ui-router使用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -327,75 +388,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-js工厂模式、构造函数以及他们创建对象的优缺点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/">js工厂模式、构造函数以及他们创建对象的优缺点</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:44:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        
-      </header>
-    
-            <!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="工厂模式和构造函数的区别"><a href="#工厂模式和构造函数的区别" class="headerlink" title="工厂模式和构造函数的区别"></a>工厂模式和构造函数的区别</h3><blockquote>
-<p>学习JavaScript有一段时间了，但是随着工作的进展，我发现，JavaScript绝对不是写一下简单效果那么肤浅，是时候完全，透彻地理解他的精髓了。</p>
-</blockquote>
-<p>好了，让俺老猪带你装逼带你飞吧！</p>
-<h3 id="一：为什么使用工厂模式和构造函数？"><a href="#一：为什么使用工厂模式和构造函数？" class="headerlink" title="一：为什么使用工厂模式和构造函数？**"></a>一：为什么使用工厂模式和构造函数？**</h3><p>&emsp;&emsp;虽然Object构造函数或者字面量(var person={})可以创建单个对象，但是，他有一个明显的缺点，那就是：重复造轮子，产生大量的重复性代码，为了解决这个问题，我们就开始使用工厂模式和构造函数模式。</p>
-<h3 id="二：什么是工厂模式？它有什么优缺点？"><a href="#二：什么是工厂模式？它有什么优缺点？" class="headerlink" title="二：什么是工厂模式？它有什么优缺点？**"></a>二：什么是工厂模式？它有什么优缺点？**</h3><p>&emsp;&emsp;1.顾名思义，工厂模式就是像工厂一样来创建对象。但这样的解释似乎有点欠妥，高大上一点，工厂模式其实是软件领域中一种广为人知的一种设计模式，这种模式抽象了创建具体对象的过程。开发人员发明了一种函数，用函数来大量创建对象的方法；<br>
-        
-          <a class="article-more-a" href="/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -494,11 +486,7 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javascript高级程序设计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端自动化工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">notes</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,7 +494,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">notes</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端自动化工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javascript高级程序设计</a>
               </li>
              
               <li class="article-tag-list-item">
