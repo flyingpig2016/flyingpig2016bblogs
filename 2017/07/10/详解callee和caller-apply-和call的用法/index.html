@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//www.iambangbang.club">
-  <title>Archives: 2017/7 | flyingpig</title>
+  <title>详解callee和caller,apply()和call的用法 | flyingpig</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
-<meta name="keywords" content="hexo,yilia,前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="flyingpig">
-<meta property="og:url" content="//www.iambangbang.club/archives/2017/07/index.html">
+  <meta name="description" content="一：函数内部的对象：arguments和this**&amp;emsp;&amp;emsp;我们都知道js中arguments对象主要是保存函数的参数(如果不知道arguments，在有参数的函数中输出一下就知道了)，但是这个对象还有一个属性为callee，它是一个指针，指向拥有这个arguments对象的函数。例如阶乘函数：12345678function factorial(num)&amp;#123;    if(">
+<meta name="keywords" content="javascript高级程序设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="详解callee和caller,apply()和call的用法">
+<meta property="og:url" content="//www.iambangbang.club/2017/07/10/详解callee和caller-apply-和call的用法/index.html">
 <meta property="og:site_name" content="flyingpig">
-<meta property="og:description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
+<meta property="og:description" content="一：函数内部的对象：arguments和this**&amp;emsp;&amp;emsp;我们都知道js中arguments对象主要是保存函数的参数(如果不知道arguments，在有参数的函数中输出一下就知道了)，但是这个对象还有一个属性为callee，它是一个指针，指向拥有这个arguments对象的函数。例如阶乘函数：12345678function factorial(num)&amp;#123;    if(">
+<meta property="og:updated_time" content="2017-07-14T10:54:32.656Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flyingpig">
-<meta name="twitter:description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
+<meta name="twitter:title" content="详解callee和caller,apply()和call的用法">
+<meta name="twitter:description" content="一：函数内部的对象：arguments和this**&amp;emsp;&amp;emsp;我们都知道js中arguments对象主要是保存函数的参数(如果不知道arguments，在有参数的函数中输出一下就知道了)，但是这个对象还有一个属性为callee，它是一个指针，指向拥有这个arguments对象的函数。例如阶乘函数：12345678function factorial(num)&amp;#123;    if(">
   
   
     <link rel="icon" href="/favicon.jpg">
@@ -192,226 +193,108 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-详解callee和caller-apply-和call的用法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/14/AngularJs中ui-router使用方法/" class="archive-article-date">
-  	<time datetime="2017-07-14T10:39:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-14</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/14/AngularJs中ui-router使用方法/">AngularJs中ui-router使用方法</a>
+    <h1 class="article-title" itemprop="name">
+      详解callee和caller,apply()和call的用法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Angularjs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/10/js-touch事件及gesture-手势-事件详解/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/10/js-touch事件及gesture-手势-事件详解/">js-touch事件及gesture-手势-事件详解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:44:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/">js工厂模式、构造函数以及他们创建对象的优缺点</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/10/深入理解prototyp/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:40:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/10/深入理解prototyp/">深入理解prototyp</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/10/javascript继承方式——原型链/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:37:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/10/javascript继承方式——原型链/">javascript继承方式——原型链</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/10/详解callee和caller-apply-和call的用法/" class="archive-article-date">
+        
+        <a href="/2017/07/10/详解callee和caller-apply-和call的用法/" class="archive-article-date">
   	<time datetime="2017-07-10T05:31:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/10/详解callee和caller-apply-和call的用法/">详解callee和caller,apply()和call的用法</a>
-    </h1>
-  
+        
+      </header>
+    
+            <!-- 目录内容 -->
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+                <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+                <strong class="toc-title">文章目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一：函数内部的对象：arguments和this"><span class="toc-number">1.</span> <span class="toc-text">一：函数内部的对象：arguments和this**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二：this的意义？"><span class="toc-number">2.</span> <span class="toc-text">二：this的意义？**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三：caller属性是什么？"><span class="toc-number">3.</span> <span class="toc-text">三：caller属性是什么？**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四：call-和apply-的应用"><span class="toc-number">4.</span> <span class="toc-text">四：call()和apply()的应用**</span></a></li></ol>
+           </div>
+           <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+                };
+            function showBtn(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:none");
+                show_toc_btn.setAttribute("style","display:block");
+                };
+           </script>
+             
+        <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一：函数内部的对象：arguments和this"><a href="#一：函数内部的对象：arguments和this" class="headerlink" title="一：函数内部的对象：arguments和this**"></a>一：函数内部的对象：arguments和this**</h3><p>&emsp;&emsp;我们都知道js中arguments对象主要是保存函数的参数(如果不知道arguments，在有参数的函数中输出一下就知道了)，但是这个对象还有一个属性为callee，它是一个指针，指向拥有这个arguments对象的函数。例如阶乘函数：<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function <span class="built_in">factorial</span>(<span class="built_in">num</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">num</span> &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="built_in">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">return</span> <span class="built_in">num</span> * <span class="built_in">factorial</span>(<span class="built_in">num</span>-<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">factorial</span>(<span class="number">5</span>));//<span class="number">120</span></div></pre></td></tr></table></figure></p>
+<p>由于函数的执行和函数名factorial紧紧耦合在了一起，为了消除这种紧密耦合的现象，可以使用arguments.callee:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial2</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> num * <span class="built_in">arguments</span>.callee(num<span class="number">-1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(factorial2(<span class="number">5</span>)); <span class="comment">//120</span></div></pre></td></tr></table></figure></p>
+<p>两者的区别如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> trueFactorial = factorial2;</div><div class="line">factorial = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(trueFactorial(<span class="number">6</span>)); <span class="comment">//720</span></div><div class="line"><span class="built_in">console</span>.log(factorial(<span class="number">6</span>));      <span class="comment">//0</span></div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;上面的trueFactorial实际上是在另一个位置上保存了一个函数的指针。然后又将一个简单的函数赋值给factorial变量。如果不用arguments.callee，那么，调用trueFactorial(6)的时候就返回0.但是上面的例子解除了代码和函数的耦合状态，因此trueFactorial仍然可以正常的计算阶乘。<br><a id="more"></a></p>
+<h3 id="二：this的意义？"><a href="#二：this的意义？" class="headerlink" title="二：this的意义？**"></a>二：this的意义？**</h3><p>&emsp;&emsp;this引用的是函数执行的环境对象（当我们在网页的全局作用域中调用函数的时候，this对象就是window对象）。也就是说，<strong>在全局作用域中的所有变量和函数都是window对象的属性和方法</strong>，例如：<br><figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">color</span> = <span class="string">'green'</span>;  <span class="comment">//相当于window.color = 'green'</span></div><div class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attribute">color</span>:<span class="string">"blue"</span>&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">saycolor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.color);</div><div class="line">&#125;</div><div class="line">saycolor();         <span class="comment">//green，这里的this代表window</span></div><div class="line"><span class="built_in">window</span>.saycolor()   <span class="comment">//green</span></div><div class="line">obj1.saycolor = saycolor;</div><div class="line">obj1.saycolor();    <span class="comment">//blue</span></div></pre></td></tr></table></figure></p>
+<h3 id="三：caller属性是什么？"><a href="#三：caller属性是什么？" class="headerlink" title="三：caller属性是什么？**"></a>三：caller属性是什么？**</h3><p>&emsp;&emsp;caller属性保存着调用当前函数的函数的引用。如果是在全局作用域中调用当前的函数，它的值就是null。例子如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(a.caller); <span class="comment">//返回正在调用俺的函数</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    a();</div><div class="line">&#125;</div><div class="line">a();    <span class="comment">//null</span></div><div class="line">b();    <span class="comment">//function b()&#123;a();&#125;</span></div></pre></td></tr></table></figure></p>
+<p>但是为了实现更松散的耦合，也可以通过arguments.callee.caller来达到相同的目的：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee.caller); <span class="comment">//返回正在调用俺的函数b</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    a();</div><div class="line">&#125;</div><div class="line">a();    <span class="comment">//null</span></div><div class="line">b();    <span class="comment">//function b()&#123;a();&#125;</span></div></pre></td></tr></table></figure></p>
+<p>不过arguments.callee在严格模式下会导致错误。</p>
+<h3 id="四：call-和apply-的应用"><a href="#四：call-和apply-的应用" class="headerlink" title="四：call()和apply()的应用**"></a>四：call()和apply()的应用**</h3><p>&emsp;&emsp;每个函数都包含两个属性：length和prototype。其中length表示函数希望接受地参数的个数，例如：<br><figure class="highlight scilab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span><span class="params">()</span>&#123;</span></div><div class="line">    console.<span class="built_in">log</span>(<span class="number">000</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span><span class="params">(arg1)</span>&#123;</span></div><div class="line">    console.<span class="built_in">log</span>(<span class="number">111</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span><span class="params">(arg1,arg2)</span>&#123;</span></div><div class="line">    console.<span class="built_in">log</span>(<span class="number">222</span>)</div><div class="line">&#125;</div><div class="line">console.<span class="built_in">log</span>(a.<span class="built_in">length</span>); <span class="comment">//0</span></div><div class="line">console.<span class="built_in">log</span>(b.<span class="built_in">length</span>); <span class="comment">//1</span></div><div class="line">console.<span class="built_in">log</span>(c.<span class="built_in">length</span>); <span class="comment">//2</span></div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;prototype属性是非常重要的，它指向一个对象，包含了所有它生成实例下的所有属性和方法，再次不再赘述，我的prototype博文中另有详细讲解。<br>每个函数都包含两个非继承而来的方法：apply()和call()。这两个方法的用途都是在特定的作用域中调用函数，其实就是所在函数体内this对象的值。<br>1.apply()接受两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中：第二个参数可以是array的实例，也可以是arguments对象。实例如下：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function <span class="function"><span class="title">fun</span><span class="params">(arg1,arg2)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> arg1 + arg2;</div><div class="line">&#125;</div><div class="line">function callfun1(arg1,arg2)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">fun</span>.<span class="title">apply</span><span class="params">(this,arguments)</span></span>; <span class="comment">//传入arguments对象</span></div><div class="line">&#125;</div><div class="line">function callfun2(arg1,arg2)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">fun</span>.<span class="title">apply</span><span class="params">(this,[arg1,arg2])</span></span><span class="comment">//传入参数数组</span></div><div class="line">&#125;</div><div class="line">console.log(callfun1(<span class="number">3</span>,<span class="number">7</span>)); <span class="comment">//10</span></div><div class="line">console.log(callfun2(<span class="number">3</span>,<span class="number">2</span>)); <span class="comment">//5</span></div></pre></td></tr></table></figure></p>
+<p>2.call()方法和apply()方法的作用相同，曲别在于接收参数的方式不同。用call方法传递参数的时候必须直接传递，也就是传递给函数的参数必须一一列举出来，例子如下：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function <span class="function"><span class="title">fun</span><span class="params">(arg1,arg2)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> arg1 + arg2;</div><div class="line">&#125;</div><div class="line">function callfun3(arg1,arg2)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">fun</span>.<span class="title">call</span><span class="params">(this,arg1,arg2)</span></span>;</div><div class="line">&#125;</div><div class="line">console.log(callfun3(<span class="number">2</span>,<span class="number">6</span>)); <span class="comment">//8</span></div></pre></td></tr></table></figure>
+<p>但是传递参数并非apply()和call()用的最多的地方，他们真正强大的地方时能够扩充函数赖以运行的作用域。例子如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> age = <span class="number">18</span>;</div><div class="line"><span class="keyword">var</span> person = &#123;<span class="attr">age</span>:<span class="number">17</span>&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.age);</div><div class="line">&#125;</div><div class="line">say();</div><div class="line">say.call(<span class="keyword">this</span>);  <span class="comment">//18</span></div><div class="line">say.call(<span class="built_in">window</span>) <span class="comment">//18</span></div><div class="line">say.call(person) <span class="comment">//17，此时运行的作用域为person，相当于把person的作用域传给了say函数里面</span></div></pre></td></tr></table></figure></p>
+<p>3.bind()用法。bind()方法会创建一个函数的实例，其this值会被绑定到传给bind()函数的值。例如：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var age = <span class="number">18</span>;</div><div class="line">var person = &#123;age:<span class="number">17</span>&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span></span> say()&#123;</div><div class="line">    console.<span class="built_in">log</span>(this.age);</div><div class="line">&#125;</div><div class="line">var psay = say.<span class="keyword">bind</span>(person);</div><div class="line">console.<span class="built_in">log</span>(psay) //<span class="function"><span class="keyword">function</span></span> say()&#123;console.<span class="built_in">log</span>(this.age);&#125;</div><div class="line">psay();     //<span class="number">17</span>，相当于把person作用域传给了say()构造函数里面，它和apply和<span class="keyword">call</span>的区别就是，<span class="keyword">bind</span>必须还要创建一个函数实例，也就是<span class="keyword">bind</span>不能直接执行传参后的函数。</div></pre></td></tr></table></figure>
+<p>上面代码中person对象的作用域传到了bind()新创建的psay()函数执行环境里面，所以执行完输出this.age=17.</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipy.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -423,133 +306,113 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.iambangbang.club/2017/07/10/详解callee和caller-apply-和call的用法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/10/gulp的实时刷新、代码压缩、代码排错/" class="archive-article-date">
-  	<time datetime="2017-07-10T04:33:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/10/gulp的实时刷新、代码压缩、代码排错/">gulp的实时刷新、代码压缩、代码排错</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端自动化工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/02/mongodb常用命令学习/" class="archive-article-date">
-  	<time datetime="2017-07-02T08:23:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-02</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/02/mongodb常用命令学习/">mongodb常用命令学习</a>
-    </h1>
+    <a href="/2017/07/10/javascript继承方式——原型链/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          javascript继承方式——原型链
+        
+      </div>
+    </a>
   
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MongoDB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/02/resume/" class="archive-article-date">
-  	<time datetime="2017-07-02T08:23:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-02</time>
-</a>
-        </div>
-    	 
+    <a href="/2017/07/10/gulp的实时刷新、代码压缩、代码排错/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">gulp的实时刷新、代码压缩、代码排错</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/02/resume/">resume</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/resume/" class="article-tag-list-link color2">resume</a>
-        		</li>
-      		
-		</ul>
-	</div>
+</nav>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
+
+
+
   
 
-    
+
+  
+
+
+  
+    <section id="comments">    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper" sid="详解callee和caller,apply()和call的用法"></div>
+      <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+      <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",    
+        productKey: "cc67d8b92f2e42a1af6e43e415055393",
+        target: "cloud-tie-wrapper"   
+      };
+      var yunManualLoad = true;
+      Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+      </script>
+    </section>
+  
 
 
           </div>
@@ -573,8 +436,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
