@@ -15,12 +15,12 @@
 <meta property="og:url" content="//www.iambangbang.club/2017/07/18/directive-自定义指令的方法/index.html">
 <meta property="og:site_name" content="flyingpig">
 <meta property="og:description" content="This is a angular-demos, It can show my progress of study. 02directive——Angularjs的创建指令方法restrict 值分类: E 作为元素名使用,例如：&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;   A 作为属性使用(默认),例如：&amp;lt;div hello&amp;gt;&amp;lt;/div&amp;gt; C 作为类名使用">
-<meta property="og:image" content="//www.iambangbang.club/2017/07/18/directive-自定义指令的方法/img/1.jpg">
-<meta property="og:updated_time" content="2017-07-18T04:28:21.408Z">
+<meta property="og:image" content="https://github.com/flyingpig2016/angular-demos/raw/master/02directive/img/1.jpg">
+<meta property="og:updated_time" content="2017-07-18T07:29:20.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="directive-自定义指令的方法.md">
 <meta name="twitter:description" content="This is a angular-demos, It can show my progress of study. 02directive——Angularjs的创建指令方法restrict 值分类: E 作为元素名使用,例如：&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;   A 作为属性使用(默认),例如：&amp;lt;div hello&amp;gt;&amp;lt;/div&amp;gt; C 作为类名使用">
-<meta name="twitter:image" content="//www.iambangbang.club/2017/07/18/directive-自定义指令的方法/img/1.jpg">
+<meta name="twitter:image" content="https://github.com/flyingpig2016/angular-demos/raw/master/02directive/img/1.jpg">
   
   
     <link rel="icon" href="/favicon.jpg">
@@ -256,7 +256,7 @@ var _hmt = _hmt || [];
 <h3 id="templateCache-缓存模板方法"><a href="#templateCache-缓存模板方法" class="headerlink" title="$templateCache(缓存模板方法)"></a>$templateCache(缓存模板方法)</h3><p>&emsp;&emsp;通过angular创建的模块,都有一个run方法,注射器在加载完成所有模块的时候，该方法使用一次。接受一个函数作为参数.该函数会被执行.$templateCache是angular内置的一个服务,它的put方法用于存放模板.它接受两个参数,第一个参数为模板的名字,第一个参数为模板的名字,也就是templateUrl的值,cache.html,第二个参数就是html字符串,也就是模板的内容.<br>&emsp;&emsp;这种方法常用于模板内容是通过$http异步获取的.然后将模板放入$templateCache中以便后面使用.</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">myApp.run(<span class="function"><span class="keyword">function</span><span class="params">($templateCache)</span></span>&#123;</div><div class="line">    <span class="comment">// $templateCache.put('tpls/cache.html','&lt;div&gt;hello everyone!!!!&lt;/div&gt;')</span></div><div class="line">    $templateCache.put(<span class="string">'cache.html'</span>,<span class="string">'&lt;p&gt;我是缓存的模板&lt;/p&gt;'</span>)</div><div class="line">&#125;);</div><div class="line">myApp.directive(<span class="string">'cacheDirective'</span>,<span class="function"><span class="keyword">function</span><span class="params">($templateCache)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span>&#123;</div><div class="line">        restrict : <span class="string">'AECM'</span>,</div><div class="line">        template : $templateCache.get(<span class="string">'cache.html'</span>),</div><div class="line">        replace : <span class="keyword">true</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h3 id="transclude属性的使用-让创建的标签里面的内容不被替换"><a href="#transclude属性的使用-让创建的标签里面的内容不被替换" class="headerlink" title="transclude属性的使用(让创建的标签里面的内容不被替换)"></a>transclude属性的使用(让创建的标签里面的内容不被替换)</h3><p>下面代码让html页面中的<code>&lt;no-Replace&gt;希望我不被替换掉&lt;/no-Replace&gt;</code>里面的内容不会被替换<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">myApp.directive(<span class="string">"noReplace"</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        restrict : <span class="string">'AECM'</span>,</div><div class="line">        template : <span class="string">"&lt;div&gt;Hello everyone,I am noReplace!&lt;/div&gt;&lt;div ng-transclude&gt;&lt;/div&gt;"</span>,</div><div class="line">        transclude : <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<h3 id="compile与link"><a href="#compile与link" class="headerlink" title="compile与link"></a>compile与link</h3><p>&emsp;&emsp;Angularjs的运行流程如下所示：<br><img src="./img/1.jpg" alt="compile与link"></p>
+<h3 id="compile与link"><a href="#compile与link" class="headerlink" title="compile与link"></a>compile与link</h3><p>&emsp;&emsp;Angularjs的运行流程如下所示：<br><img src="https://github.com/flyingpig2016/angular-demos/raw/master/02directive/img/1.jpg" alt="compile与link"></p>
 <ul>
 <li>compile函数用来对模板自身进行转换，link函数负责在模型和视图之间进行动态关联；</li>
 <li>作用域在链接阶段才会被绑定到编译之后的link函数上；</li>
@@ -516,7 +516,7 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端自动化工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">notes</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,7 +528,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">notes</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端自动化工具</a>
               </li>
              
               <li class="article-tag-list-item">
