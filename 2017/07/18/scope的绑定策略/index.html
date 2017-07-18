@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//www.iambangbang.club">
-  <title>flyingpig</title>
+  <title>scope的绑定策略 | flyingpig</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
-<meta name="keywords" content="hexo,yilia,前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="flyingpig">
-<meta property="og:url" content="//www.iambangbang.club/page/3/index.html">
+  <meta name="description" content="初探scope的用法？我们创建一个例子：在第一个html文件中：1234&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt; js代码： 123456789var myModule = angular.module(&apos;myModule&apos;">
+<meta name="keywords" content="Angularjs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="scope的绑定策略">
+<meta property="og:url" content="//www.iambangbang.club/2017/07/18/scope的绑定策略/index.html">
 <meta property="og:site_name" content="flyingpig">
-<meta property="og:description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
+<meta property="og:description" content="初探scope的用法？我们创建一个例子：在第一个html文件中：1234&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt; js代码： 123456789var myModule = angular.module(&apos;myModule&apos;">
+<meta property="og:updated_time" content="2017-07-18T07:25:12.932Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flyingpig">
-<meta name="twitter:description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
+<meta name="twitter:title" content="scope的绑定策略">
+<meta name="twitter:description" content="初探scope的用法？我们创建一个例子：在第一个html文件中：1234&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt;&amp;lt;hello&amp;gt;&amp;lt;/hello&amp;gt; js代码： 123456789var myModule = angular.module(&apos;myModule&apos;">
   
   
     <link rel="icon" href="/favicon.jpg">
@@ -192,38 +193,113 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-深入理解prototyp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-scope的绑定策略" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/深入理解prototyp/">深入理解prototyp</a>
+    <h1 class="article-title" itemprop="name">
+      scope的绑定策略
     </h1>
   
 
         
-        <a href="/2017/07/10/深入理解prototyp/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:40:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
+        <a href="/2017/07/18/scope的绑定策略/" class="archive-article-date">
+  	<time datetime="2017-07-18T05:31:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
 </a>
         
       </header>
     
             <!-- 目录内容 -->
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+                <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+                <strong class="toc-title">文章目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#初探scope的用法？"><span class="toc-number">1.</span> <span class="toc-text">初探scope的用法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scope的绑定策略有三种方法？"><span class="toc-number">2.</span> <span class="toc-text">scope的绑定策略有三种方法？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用’-’的例子如下："><span class="toc-number">2.1.</span> <span class="toc-text">使用’@’的例子如下：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用-的例子如下："><span class="toc-number">2.2.</span> <span class="toc-text">使用=的例子如下：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用-amp-的例子如下："><span class="toc-number">2.3.</span> <span class="toc-text">使用&的例子如下：</span></a></li></ol></li></ol>
+           </div>
+           <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+                };
+            function showBtn(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:none");
+                show_toc_btn.setAttribute("style","display:block");
+                };
+           </script>
              
         <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="对JavaScript中原型模式的理解"><a href="#对JavaScript中原型模式的理解" class="headerlink" title="对JavaScript中原型模式的理解"></a>对JavaScript中原型模式的理解</h2><h3 id="一：什么是原型对象？有什么优点？"><a href="#一：什么是原型对象？有什么优点？" class="headerlink" title="一：什么是原型对象？有什么优点？**"></a>一：什么是原型对象？有什么优点？**</h3><p>&emsp;&emsp; 简单的来说，无论何时，我们创建的每一个函数都有一个prototype属性，这个属性是一个指针，指向一个对象，这个对象包含了通过调用该构造函数所创建的对象共享的属性和方法。其实我们平常的叫法就是指：<strong>prototype就是通过该构造函数创建的某个实例的原型对象</strong>，但是其实prototype是每个构造函数的属性而已，只能说万物皆对象罢了。<br>&emsp;&emsp; 原型对象的优点是：所有的对象实例都可以共享它包含的属性和方法。这一点可以在构造函数里就可以看出来，因为构造函数在函数里面就定义了对象的实例信息，而原型对象可以在任何地方定义属性和方法。例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">Person.prototype.name = <span class="string">'bangbang'</span>;</div><div class="line">Person.prototype.age = <span class="number">18</span>;</div><div class="line">Person.prototype.job = <span class="string">'programmer'</span>;</div><div class="line">Person.prototype.dream = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'Change yourself'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</div><div class="line">person1.dream();	<span class="comment">//Change yourself</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</div><div class="line">person2.dream();</div><div class="line"><span class="comment">//判断两个实例继承的方法和属性是否全等</span></div><div class="line"><span class="built_in">console</span>.log(person1.dream === person2.dream);</div><div class="line"><span class="built_in">console</span>.log(person1.age === person2.age);</div></pre></td></tr></table></figure></p>
-<p>由以上的代码可以看出它比构造函数方法的好处就是，person1和person2访问的都是同一个dream()函数，即他们的属性和方法都是共享的。<br>
-        
-          <a class="article-more-a" href="/2017/07/10/深入理解prototyp/#more">more >></a>
-        
+        <h3 id="初探scope的用法？"><a href="#初探scope的用法？" class="headerlink" title="初探scope的用法？"></a>初探scope的用法？</h3><p>我们创建一个例子：<br>在第一个html文件中：<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="section">&lt;hello&gt;</span><span class="section">&lt;/hello&gt;</span></div><div class="line"><span class="section">&lt;hello&gt;</span><span class="section">&lt;/hello&gt;</span></div><div class="line"><span class="section">&lt;hello&gt;</span><span class="section">&lt;/hello&gt;</span></div><div class="line"><span class="section">&lt;hello&gt;</span><span class="section">&lt;/hello&gt;</span></div></pre></td></tr></table></figure></p>
+<p>js代码：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var myModule = angular.module(<span class="symbol">'myModule</span>',[]);</div><div class="line">myModule.directive(<span class="symbol">'hello</span>',<span class="keyword">function</span>()&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        scope : &#123;&#125;,</div><div class="line">        restrict : '<span class="type">AE</span>',</div><div class="line">        template : '&lt;<span class="type">div</span>&gt;&lt;input <span class="keyword">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"userName"</span> /&gt;&#123;&#123;userName&#125;&#125;&lt;/div&gt;',</div><div class="line">        replace : <span class="type">true</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>以上代码，当不存在<code>scope:{}</code>的时候，在其中一个input输入，其他都发生变化，当存在的时候，输入一个，其他不发生变化。</p>
+<h3 id="scope的绑定策略有三种方法？"><a href="#scope的绑定策略有三种方法？" class="headerlink" title="scope的绑定策略有三种方法？"></a><code>scope</code>的绑定策略有三种方法？</h3><ul>
+<li><p><code>@</code> ：把当前属性作为字符串传递，你还可以绑定来自外层<code>scope</code>的值，在属性值中插入双括号即可，此方法是单项绑定；</p>
+</li>
+<li><p><code>=</code> ：与父scope中的属性进行双向绑定</p>
+</li>
+<li><p><code>&amp;</code> ：传递来自父scope的函数，稍后再调用.</p>
+<a id="more"></a>
+<h4 id="使用’-’的例子如下："><a href="#使用’-’的例子如下：" class="headerlink" title="使用’@’的例子如下："></a>使用’@’的例子如下：</h4><p><code>02scope@html</code>内容：</p>
+</li>
+</ul>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">"myCtrl"</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">drink</span> <span class="attr">flavor</span>=<span class="string">"</span></span><span class="template-variable">&#123;&#123;ctrlFlavor&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span><span class="tag">&lt;/<span class="name">drink</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><code>02scope@.js</code>内容：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myModule = angular.module(<span class="string">'myModule'</span>,[]);</div><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span><span class="params">($scope)</span></span>&#123;</div><div class="line">    $scope.ctrlFlavor = <span class="string">'百事可乐'</span>;</div><div class="line">    $scope.ctrlFlavor2 = <span class="string">'可口可乐'</span>;</div><div class="line">&#125;]);</div><div class="line">myModule.directive(<span class="string">'drink'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        restrict : <span class="string">'AE'</span>,</div><div class="line">        scope : &#123;</div><div class="line">            flavor: <span class="string">'@flavor'</span>  <span class="comment">//传递的是字符串,把当前属性作为字符串传递,效果和下面的link属性的效果一样。</span></div><div class="line">        &#125;,</div><div class="line">        template : <span class="string">'&lt;div&gt;&#123;&#123;flavor&#125;&#125;&lt;/div&gt;'</span>,</div><div class="line">          <span class="comment">// link : function(scope,element,attrs)&#123;</span></div><div class="line">        <span class="comment">//     console.log(attrs)</span></div><div class="line">        <span class="comment">//     scope.flavor = attrs.flavor;</span></div><div class="line">        <span class="comment">// &#125;,  </span></div><div class="line">        controller : <span class="function"><span class="keyword">function</span><span class="params">($scope)</span></span>&#123;</div><div class="line">            console.log($scope.flavor); <span class="comment">//百事可乐</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="使用-的例子如下："><a href="#使用-的例子如下：" class="headerlink" title="使用=的例子如下："></a>使用<code>=</code>的例子如下：</h4><p>需要注意的是,=和@的区别是：html中<code>&lt;drink flavor2=&quot;ctrlFlavor&quot;&gt;&lt;/drink&gt;</code>中的<code>flavor2=&quot;ctrlFlavor&quot;</code>必须为双引号，不能为,而且 = 可以传递父scope的对象，而 @ 只能为数据<br><code>03scope=.html</code>内容：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">"myCtrl"</span>&gt;</span></div><div class="line">    Ctrl : <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">ng-model</span>=<span class="string">"ctrlFlavor"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">    Directive : <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">drink</span> <span class="attr">flavor2</span>=<span class="string">"ctrlFlavor"</span>&gt;</span><span class="tag">&lt;/<span class="name">drink</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p> <code>03scope=.js</code>内容：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myModule = angular.module(<span class="string">'myModule'</span>,[]);</div><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span><span class="params">($scope)</span></span>&#123;</div><div class="line">    $scope.ctrlFlavor = <span class="string">'百事可乐'</span>;</div><div class="line">&#125;]);</div><div class="line">myModule.directive(<span class="string">'drink'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        restrict : <span class="string">'AE'</span>,</div><div class="line">        scope : &#123;</div><div class="line">            flavor2 : <span class="string">'='</span>   <span class="comment">//与父scope中的属性进行双向绑定</span></div><div class="line">        &#125;,</div><div class="line">        template : <span class="string">'&lt;input type="text" ng-model="flavor2"/&gt;'</span>,</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="使用-amp-的例子如下："><a href="#使用-amp-的例子如下：" class="headerlink" title="使用&amp;的例子如下："></a>使用&amp;的例子如下：</h4><p> <code>04scope&amp;.html</code>内容如下所示：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">"myCtrl"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">greeting</span> <span class="attr">greet</span>=<span class="string">"sayHello(name)"</span>&gt;</span><span class="tag">&lt;/<span class="name">greeting</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">greeting</span> <span class="attr">greet</span>=<span class="string">"sayHello(name)"</span>&gt;</span><span class="tag">&lt;/<span class="name">greeting</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">greeting</span> <span class="attr">greet</span>=<span class="string">"sayHello(name)"</span>&gt;</span><span class="tag">&lt;/<span class="name">greeting</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><code>04scope&amp;.js</code>内容：<br>我们知道，template中的表达式使我们自定义的内部作用域即 <code>&#39;&lt;input type=&quot;text&quot; ng-model=&quot;userName&quot; /&gt;  &#39;+&#39;&lt;button class=&quot;btn btn-default&quot; ng-click=&quot;greet({name:userName})&quot;</code>,而<code>&lt;greeting greet=&quot;sayHello(name)&quot;&gt;&lt;/greeting&gt;</code>就是自定义指令的外部作用域，两者之间的桥梁就是scope所定义的关系：<code>greet : &#39;&amp;&#39;</code>,相当于把 外部作用域的sayHello函数通过greet赋值给了ng-click中的函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myModule = angular.module(<span class="string">'myModule'</span>,[]).myModule.controller(<span class="string">'myCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">    $scope.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"hello"</span> + name);</div><div class="line">    &#125;</div><div class="line">&#125;]);</div><div class="line">myModule.directive(<span class="string">'greeting'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">restrict</span> : <span class="string">'AE'</span>,</div><div class="line">        <span class="attr">scope</span> : &#123;</div><div class="line">            <span class="attr">greet</span> : <span class="string">'&amp;'</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">template</span> : <span class="string">'&lt;input type="text" ng-model="userName" /&gt;  '</span>+</div><div class="line">                    <span class="string">'&lt;button class="btn btn-default" ng-click="greet(&#123;name:userName&#125;)" &gt;Greet&lt;/button&gt;&lt;/br&gt;&lt;br/&gt;'</span>,</div><div class="line">        <span class="attr">link</span> : <span class="function"><span class="keyword">function</span>(<span class="params">scope,element,attrs</span>)</span>&#123;</div><div class="line">            element.on(<span class="string">'input'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(attrs.greet)</div><div class="line">            &#125;)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>github源码：<a href="https://github.com/flyingpig2016/angular-demos/tree/master/04scope" target="_blank" rel="external">04scope</a> —— scope绑定策略</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipy.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -234,7 +310,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Angularjs</a>
         		</li>
       		
 		</ul>
@@ -243,159 +319,100 @@ var _hmt = _hmt || [];
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/10/深入理解prototyp/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.iambangbang.club/2017/07/18/scope的绑定策略/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
   
-    <article id="post-javascript继承方式——原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/javascript继承方式——原型链/">javascript继承方式——原型链</a>
-    </h1>
   
-
-        
-        <a href="/2017/07/10/javascript继承方式——原型链/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:37:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        
-      </header>
-    
-            <!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>JavaScript中依靠原型链的继承方式
-</code></pre><hr>
-<h3 id="开门见山，ECMAScript中实现继承主要是靠原型链来实现的。"><a href="#开门见山，ECMAScript中实现继承主要是靠原型链来实现的。" class="headerlink" title="开门见山，ECMAScript中实现继承主要是靠原型链来实现的。**"></a>开门见山，ECMAScript中实现继承主要是靠原型链来实现的。**</h3><h3 id="一：什么是原型链呢？"><a href="#一：什么是原型链呢？" class="headerlink" title="一：什么是原型链呢？**"></a>一：什么是原型链呢？**</h3><p>&emsp;&emsp;其基本思想是利用原型，让一个引用类型继承另一个引用类型的属性和方法。根据上一节<a href="http://blog.csdn.net/flyingpig2016/article/details/53048394" target="_blank" rel="external">原型对象</a>：我们知道，每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。那么如果我们让原型对象等于另一个类型的实例，结果会怎样呢？很显然，此时的原型对象将包含一个指向另一个原型的指针，相应的，另一个原型中也包含一个指向另一个构造函数的指针。假如另一个原型又是另一个类型的实例，那么上述关系层层递进，就<strong>构成了实例和原型的链条，这就是原型链</strong>。以下就是原型链形成的基本模式：<br>
-        
-          <a class="article-more-a" href="/2017/07/10/javascript继承方式——原型链/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/10/javascript继承方式——原型链/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+    <a href="/2017/07/18/link属性/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">link属性</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
 
 
   
-    <article id="post-详解callee和caller-apply-和call的用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/详解callee和caller-apply-和call的用法/">详解callee和caller,apply()和call的用法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/10/详解callee和caller-apply-和call的用法/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:31:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        
-      </header>
-    
-            <!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一：函数内部的对象：arguments和this"><a href="#一：函数内部的对象：arguments和this" class="headerlink" title="一：函数内部的对象：arguments和this**"></a>一：函数内部的对象：arguments和this**</h3><p>&emsp;&emsp;我们都知道js中arguments对象主要是保存函数的参数(如果不知道arguments，在有参数的函数中输出一下就知道了)，但是这个对象还有一个属性为callee，它是一个指针，指向拥有这个arguments对象的函数。例如阶乘函数：<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function <span class="built_in">factorial</span>(<span class="built_in">num</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">num</span> &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="built_in">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">return</span> <span class="built_in">num</span> * <span class="built_in">factorial</span>(<span class="built_in">num</span>-<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">console.<span class="built_in">log</span>(<span class="built_in">factorial</span>(<span class="number">5</span>));//<span class="number">120</span></div></pre></td></tr></table></figure></p>
-<p>由于函数的执行和函数名factorial紧紧耦合在了一起，为了消除这种紧密耦合的现象，可以使用arguments.callee:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial2</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> num * <span class="built_in">arguments</span>.callee(num<span class="number">-1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(factorial2(<span class="number">5</span>)); <span class="comment">//120</span></div></pre></td></tr></table></figure></p>
-<p>两者的区别如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> trueFactorial = factorial2;</div><div class="line">factorial = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(trueFactorial(<span class="number">6</span>)); <span class="comment">//720</span></div><div class="line"><span class="built_in">console</span>.log(factorial(<span class="number">6</span>));      <span class="comment">//0</span></div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;上面的trueFactorial实际上是在另一个位置上保存了一个函数的指针。然后又将一个简单的函数赋值给factorial变量。如果不用arguments.callee，那么，调用trueFactorial(6)的时候就返回0.但是上面的例子解除了代码和函数的耦合状态，因此trueFactorial仍然可以正常的计算阶乘。<br>
-        
-          <a class="article-more-a" href="/2017/07/10/详解callee和caller-apply-和call的用法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/10/详解callee和caller-apply-和call的用法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
 
 
   
+
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
-    </nav>
+    <section id="comments">    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper" sid="scope的绑定策略"></div>
+      <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+      <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",    
+        productKey: "cc67d8b92f2e42a1af6e43e415055393",
+        target: "cloud-tie-wrapper"   
+      };
+      var yunManualLoad = true;
+      Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+      </script>
+    </section>
   
 
 
@@ -419,8 +436,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
