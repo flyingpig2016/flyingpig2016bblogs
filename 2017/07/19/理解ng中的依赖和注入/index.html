@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//www.iambangbang.club">
-  <title>Tag: Angularjs | flyingpig</title>
+  <title>理解ng中的依赖和注入 | flyingpig</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
-<meta name="keywords" content="hexo,yilia,前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="flyingpig">
-<meta property="og:url" content="//www.iambangbang.club/tags/Angularjs/page/2/index.html">
+  <meta name="description" content="Angularjs中的依赖注入一：为什么要依赖注入？&amp;emsp;&amp;emsp;”依赖注入” ——，从字面意思上来说分为两个部分：一是依赖，二是注入。也就是说，当一个对象在建立时候，需要依赖于另一个对象，这是代码层的一种依赖关系；当在代码中声明了依赖关系之后，Angular通过injector注入器将所依赖的对象进行”注入”操作. 二：Angular的三种注入方式？&amp;emsp;&amp;emsp;推断型注入、">
+<meta name="keywords" content="Angularjs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解ng中的依赖和注入">
+<meta property="og:url" content="//www.iambangbang.club/2017/07/19/理解ng中的依赖和注入/index.html">
 <meta property="og:site_name" content="flyingpig">
-<meta property="og:description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
+<meta property="og:description" content="Angularjs中的依赖注入一：为什么要依赖注入？&amp;emsp;&amp;emsp;”依赖注入” ——，从字面意思上来说分为两个部分：一是依赖，二是注入。也就是说，当一个对象在建立时候，需要依赖于另一个对象，这是代码层的一种依赖关系；当在代码中声明了依赖关系之后，Angular通过injector注入器将所依赖的对象进行”注入”操作. 二：Angular的三种注入方式？&amp;emsp;&amp;emsp;推断型注入、">
+<meta property="og:updated_time" content="2017-07-19T12:38:47.818Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flyingpig">
-<meta name="twitter:description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
+<meta name="twitter:title" content="理解ng中的依赖和注入">
+<meta name="twitter:description" content="Angularjs中的依赖注入一：为什么要依赖注入？&amp;emsp;&amp;emsp;”依赖注入” ——，从字面意思上来说分为两个部分：一是依赖，二是注入。也就是说，当一个对象在建立时候，需要依赖于另一个对象，这是代码层的一种依赖关系；当在代码中声明了依赖关系之后，Angular通过injector注入器将所依赖的对象进行”注入”操作. 二：Angular的三种注入方式？&amp;emsp;&amp;emsp;推断型注入、">
   
   
     <link rel="icon" href="/favicon.jpg">
@@ -192,36 +193,116 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-理解ng中的依赖和注入" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      理解ng中的依赖和注入
+    </h1>
+  
+
+        
+        <a href="/2017/07/19/理解ng中的依赖和注入/" class="archive-article-date">
+  	<time datetime="2017-07-19T12:38:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-19</time>
+</a>
+        
+      </header>
     
+            <!-- 目录内容 -->
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+                <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+                <strong class="toc-title">文章目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Angularjs中的依赖注入"><span class="toc-number">1.</span> <span class="toc-text">Angularjs中的依赖注入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一：为什么要依赖注入？"><span class="toc-number">1.1.</span> <span class="toc-text">一：为什么要依赖注入？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二：Angular的三种注入方式？"><span class="toc-number">1.2.</span> <span class="toc-text">二：Angular的三种注入方式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三：Angular的创建自定义的注入方式-也就是创建能被注入的服务-？"><span class="toc-number">1.3.</span> <span class="toc-text">三：Angular的创建自定义的注入方式(也就是创建能被注入的服务)？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#provider方式？"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">provider方式？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#factory方式？（最省事）"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">factory方式？（最省事）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#service方式？-里面只是一个构造函数"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">service方式？(里面只是一个构造函数)</span></a></li></ol></li></ol></li></ol></li></ol>
+           </div>
+           <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+                };
+            function showBtn(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:none");
+                show_toc_btn.setAttribute("style","display:block");
+                };
+           </script>
+             
+        <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Angularjs中的依赖注入"><a href="#Angularjs中的依赖注入" class="headerlink" title="Angularjs中的依赖注入"></a>Angularjs中的依赖注入</h2><h3 id="一：为什么要依赖注入？"><a href="#一：为什么要依赖注入？" class="headerlink" title="一：为什么要依赖注入？"></a>一：为什么要依赖注入？</h3><p>&emsp;&emsp;”依赖注入” ——，从字面意思上来说分为两个部分：一是依赖，二是注入。也就是说，当一个对象在建立时候，需要依赖于另一个对象，这是代码层的一种依赖关系；当在代码中声明了依赖关系之后，Angular通过injector注入器将所依赖的对象进行”注入”操作.</p>
+<h3 id="二：Angular的三种注入方式？"><a href="#二：Angular的三种注入方式？" class="headerlink" title="二：Angular的三种注入方式？"></a>二：Angular的三种注入方式？</h3><p>&emsp;&emsp;推断型注入、声明式注入(标注式注入)，内联注入,下面的例子中html只有一个<code>&lt;div&gt;gameName&lt;/div&gt;</code></p>
+<ul>
+<li><p>内联注入（最常用）</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span><span class="params">($scope1)</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span><span class="params">($scope1)</span></span>&#123;</div><div class="line">        $scope1.gameName = <span class="string">'棒棒'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+</li>
+<li><p>推断型注入(也就是吧里面的函数拿出来)</p>
+</li>
+</ul>
+<p>&emsp;&emsp;注意：里面的参数($scope)不能随意换，要和被注入的对象相同,因为通常被注入的是作用域$scope<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myCtrl = <span class="function"><span class="keyword">function</span><span class="params">($scope)</span></span>&#123;</div><div class="line">    $scope.gameName = <span class="string">'棒棒'</span>;</div><div class="line">&#125;</div><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,myCtrl);</div></pre></td></tr></table></figure></p>
+<ul>
+<li>声明式注入（也就是可以换了参数的名称）<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myCtrl = <span class="function"><span class="keyword">function</span><span class="params">(myName)</span></span>&#123;</div><div class="line">    myName.gameName = <span class="string">'棒棒'</span>;</div><div class="line">&#125;</div><div class="line">myCtrl.$inject = [<span class="string">'$scope'</span>]; <span class="comment">//也就是改了一下函数的参数名称</span></div><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,myCtrl);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="三：Angular的创建自定义的注入方式-也就是创建能被注入的服务-？"><a href="#三：Angular的创建自定义的注入方式-也就是创建能被注入的服务-？" class="headerlink" title="三：Angular的创建自定义的注入方式(也就是创建能被注入的服务)？"></a>三：Angular的创建自定义的注入方式(也就是创建能被注入的服务)？</h3><ul>
+<li>provider模式是策略模式和工厂模式的综合体</li>
+<li>核心目的是为了让接口和现实分离</li>
+<li>所有的provider都可以用来进行注入：provider/factory/service/constant/value</li>
+<li>以下类型的函数可以接受注入：controller/directive/filter/service/factory</li>
+<li>Angular中的”依赖注入”是通过provider和injector这两个机制联合实现的</li>
+</ul>
+<p>下面例子中html里面都是：<code>&lt;div&gt;&lt;/div&gt;</code>，下面创建服务的方法，从上到下，灵活度依次变差，因为无论是factory、service、constant还是value最终都是调用provider，(请看Angularjs源码第3922行左右的provider函数)只是他们封装了一下我们看不到而已。</p>
+<h5 id="provider方式？"><a href="#provider方式？" class="headerlink" title="provider方式？"></a>provider方式？</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myModule = angular.module(<span class="string">'myModule'</span>,[]);</div><div class="line">myModule.provider(<span class="string">'HelloAngular'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        $get : <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">            <span class="keyword">var</span> name = <span class="string">'棒棒'</span>;</div><div class="line">            <span class="function"><span class="keyword">function</span> <span class="title">getName</span><span class="params">()</span></span>&#123;</div><div class="line">                <span class="keyword">return</span> name;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> &#123;</div><div class="line">                getName : getName</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,[<span class="string">'$scope'</span>,<span class="string">'HelloAngular'</span>,</div><div class="line">    <span class="function"><span class="keyword">function</span><span class="params">($scope,HelloAngular)</span></span>&#123;</div><div class="line">        $scope.myName = HelloAngular.getName();</div><div class="line">    &#125;</div><div class="line">])</div></pre></td></tr></table></figure>
+<h5 id="factory方式？（最省事）"><a href="#factory方式？（最省事）" class="headerlink" title="factory方式？（最省事）"></a>factory方式？（最省事）</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myModule = angular.module(<span class="string">"myModule"</span>, []);</div><div class="line">myModule.factory(<span class="string">'game'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        gameName: <span class="string">'棒棒'</span></div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,[<span class="string">'$scope'</span>,<span class="string">'game'</span>,<span class="function"><span class="keyword">function</span><span class="params">($scope,game)</span></span>&#123;</div><div class="line">    $scope.myName = game.gameName</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<h5 id="service方式？-里面只是一个构造函数"><a href="#service方式？-里面只是一个构造函数" class="headerlink" title="service方式？(里面只是一个构造函数)"></a>service方式？(里面只是一个构造函数)</h5><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myModule = angular.module(<span class="string">'myModule'</span>,[]);</div><div class="line">myModule.service(<span class="string">'HelloAngular'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = <span class="string">'棒棒'</span>;</div><div class="line">    <span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,[<span class="string">'$scope'</span>,<span class="string">'HelloAngular'</span>,<span class="function"><span class="keyword">function</span><span class="params">($scope,HelloAngular)</span></span>&#123;</div><div class="line">    $scope.myName = HelloAngular.getName();</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipy.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/18/link属性/" class="archive-article-date">
-  	<time datetime="2017-07-18T04:57:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/18/link属性/">link属性</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -233,98 +314,103 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.iambangbang.club/2017/07/19/理解ng中的依赖和注入/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/18/directive-自定义指令的方法/" class="archive-article-date">
-  	<time datetime="2017-07-18T03:14:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/18/directive-自定义指令的方法/">directive-自定义指令的方法.md</a>
-    </h1>
+  
+    <a href="/2017/07/19/ng中定义service和filter的方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ng中定义service和filter的方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Angularjs</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/14/AngularJs中ui-router使用方法/" class="archive-article-date">
-  	<time datetime="2017-07-14T10:39:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/14/AngularJs中ui-router使用方法/">AngularJs中ui-router使用方法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Angularjs</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/tags/Angularjs/">&laquo; Prev</a><a class="page-number" href="/tags/Angularjs/">1</a><span class="page-number current">2</span>
-    </nav>
+    <section id="comments">    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper" sid="理解ng中的依赖和注入"></div>
+      <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+      <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",    
+        productKey: "cc67d8b92f2e42a1af6e43e415055393",
+        target: "cloud-tie-wrapper"   
+      };
+      var yunManualLoad = true;
+      Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+      </script>
+    </section>
   
 
 
@@ -349,9 +435,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
