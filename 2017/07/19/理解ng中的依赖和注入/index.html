@@ -15,7 +15,7 @@
 <meta property="og:url" content="//www.iambangbang.club/2017/07/19/理解ng中的依赖和注入/index.html">
 <meta property="og:site_name" content="flyingpig">
 <meta property="og:description" content="Angularjs中的依赖注入一：为什么要依赖注入？&amp;emsp;&amp;emsp;”依赖注入” ——，从字面意思上来说分为两个部分：一是依赖，二是注入。也就是说，当一个对象在建立时候，需要依赖于另一个对象，这是代码层的一种依赖关系；当在代码中声明了依赖关系之后，Angular通过injector注入器将所依赖的对象进行”注入”操作. 二：Angular的三种注入方式？&amp;emsp;&amp;emsp;推断型注入、">
-<meta property="og:updated_time" content="2017-07-19T12:51:56.953Z">
+<meta property="og:updated_time" content="2017-07-19T12:55:59.642Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解ng中的依赖和注入">
 <meta name="twitter:description" content="Angularjs中的依赖注入一：为什么要依赖注入？&amp;emsp;&amp;emsp;”依赖注入” ——，从字面意思上来说分为两个部分：一是依赖，二是注入。也就是说，当一个对象在建立时候，需要依赖于另一个对象，这是代码层的一种依赖关系；当在代码中声明了依赖关系之后，Angular通过injector注入器将所依赖的对象进行”注入”操作. 二：Angular的三种注入方式？&amp;emsp;&amp;emsp;推断型注入、">
@@ -243,16 +243,16 @@ var _hmt = _hmt || [];
         <h2 id="Angularjs中的依赖注入"><a href="#Angularjs中的依赖注入" class="headerlink" title="Angularjs中的依赖注入"></a>Angularjs中的依赖注入</h2><h3 id="一：为什么要依赖注入？"><a href="#一：为什么要依赖注入？" class="headerlink" title="一：为什么要依赖注入？"></a>一：为什么要依赖注入？</h3><p>&emsp;&emsp;”依赖注入” ——，从字面意思上来说分为两个部分：一是依赖，二是注入。也就是说，当一个对象在建立时候，需要依赖于另一个对象，这是代码层的一种依赖关系；当在代码中声明了依赖关系之后，Angular通过injector注入器将所依赖的对象进行”注入”操作.</p>
 <h3 id="二：Angular的三种注入方式？"><a href="#二：Angular的三种注入方式？" class="headerlink" title="二：Angular的三种注入方式？"></a>二：Angular的三种注入方式？</h3><p>&emsp;&emsp;推断型注入、声明式注入(标注式注入)，内联注入,下面的例子中html只有一个<code>&lt;div&gt;gameName&lt;/div&gt;</code></p>
 <ul>
-<li>内联注入（最常用）<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span><span class="params">($scope1)</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span><span class="params">($scope1)</span></span>&#123;</div><div class="line">        $scope1.gameName = <span class="string">'棒棒'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<li><p>内联注入（最常用）</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span><span class="params">($scope1)</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span><span class="params">($scope1)</span></span>&#123;</div><div class="line">        $scope1.gameName = <span class="string">'棒棒'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
 </li>
-</ul>
+<li><p>推断型注入(也就是吧里面的函数拿出来)</p>
 <a id="more"></a>
-<ul>
-<li>推断型注入(也就是吧里面的函数拿出来)</li>
-</ul>
-<p>&emsp;&emsp;注意：里面的参数($scope)不能随意换，要和被注入的对象相同,因为通常被注入的是作用域$scope<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myCtrl = <span class="function"><span class="keyword">function</span><span class="params">($scope)</span></span>&#123;</div><div class="line">    $scope.gameName = <span class="string">'棒棒'</span>;</div><div class="line">&#125;</div><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,myCtrl);</div></pre></td></tr></table></figure></p>
-<ul>
-<li>声明式注入（也就是可以换了参数的名称）<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myCtrl = <span class="function"><span class="keyword">function</span><span class="params">(myName)</span></span>&#123;</div><div class="line">    myName.gameName = <span class="string">'棒棒'</span>;</div><div class="line">&#125;</div><div class="line">myCtrl.$inject = [<span class="string">'$scope'</span>]; <span class="comment">//也就是改了一下函数的参数名称</span></div><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,myCtrl);</div></pre></td></tr></table></figure>
+<p>&emsp;&emsp;注意：里面的参数($scope)不能随意换，要和被注入的对象相同,因为通常被注入的是作用域$scope</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myCtrl = <span class="function"><span class="keyword">function</span><span class="params">($scope)</span></span>&#123;</div><div class="line">    $scope.gameName = <span class="string">'棒棒'</span>;</div><div class="line">&#125;</div><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,myCtrl);</div></pre></td></tr></table></figure>
+</li>
+<li><p>声明式注入（也就是可以换了参数的名称）</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myCtrl = <span class="function"><span class="keyword">function</span><span class="params">(myName)</span></span>&#123;</div><div class="line">    myName.gameName = <span class="string">'棒棒'</span>;</div><div class="line">&#125;</div><div class="line">myCtrl.$inject = [<span class="string">'$scope'</span>]; <span class="comment">//也就是改了一下函数的参数名称</span></div><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,myCtrl);</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="三：Angular的创建自定义的注入方式-也就是创建能被注入的服务-？"><a href="#三：Angular的创建自定义的注入方式-也就是创建能被注入的服务-？" class="headerlink" title="三：Angular的创建自定义的注入方式(也就是创建能被注入的服务)？"></a>三：Angular的创建自定义的注入方式(也就是创建能被注入的服务)？</h3><ul>
@@ -506,11 +506,11 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">notes</a>
+                <a href="javascript:void(0)" class="js-tag color5">Angularjs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Angularjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">notes</a>
               </li>
              
               <li class="article-tag-list-item">
