@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="//www.iambangbang.club">
   <title>mongodb常用命令学习 | flyingpig</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="mongoDB常用命令1. 展示数据库：show dbs；2. 显示当前数据库对象或集合：db;3. 连接到一个指定的数据库:  use;">
+  <meta name="description" content="mongoDB常用命令1. 展示数据库：show dbs；2. 显示当前数据库对象或集合：db;3. 连接到一个指定的数据库:  use;4. 关系型数据库和mongodb的术语：">
 <meta name="keywords" content="MongoDB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mongodb常用命令学习">
 <meta property="og:url" content="//www.iambangbang.club/2017/07/02/mongodb常用命令学习/index.html">
 <meta property="og:site_name" content="flyingpig">
-<meta property="og:description" content="mongoDB常用命令1. 展示数据库：show dbs；2. 显示当前数据库对象或集合：db;3. 连接到一个指定的数据库:  use;">
+<meta property="og:description" content="mongoDB常用命令1. 展示数据库：show dbs；2. 显示当前数据库对象或集合：db;3. 连接到一个指定的数据库:  use;4. 关系型数据库和mongodb的术语：">
 <meta property="og:image" content="http://img.blog.csdn.net/20170610182030359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmx5aW5ncGlnMjAxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-07-14T10:55:57.935Z">
+<meta property="og:updated_time" content="2017-07-19T12:51:12.963Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongodb常用命令学习">
-<meta name="twitter:description" content="mongoDB常用命令1. 展示数据库：show dbs；2. 显示当前数据库对象或集合：db;3. 连接到一个指定的数据库:  use;">
+<meta name="twitter:description" content="mongoDB常用命令1. 展示数据库：show dbs；2. 显示当前数据库对象或集合：db;3. 连接到一个指定的数据库:  use;4. 关系型数据库和mongodb的术语：">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20170610182030359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmx5aW5ncGlnMjAxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
   
@@ -242,8 +242,7 @@ var _hmt = _hmt || [];
         <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="mongoDB常用命令"><a href="#mongoDB常用命令" class="headerlink" title="mongoDB常用命令"></a>mongoDB常用命令</h2><h3 id="1-展示数据库：show-dbs；"><a href="#1-展示数据库：show-dbs；" class="headerlink" title="1. 展示数据库：show dbs；"></a><strong>1. 展示数据库：</strong><code>show dbs</code>；</h3><h3 id="2-显示当前数据库对象或集合：db"><a href="#2-显示当前数据库对象或集合：db" class="headerlink" title="2. 显示当前数据库对象或集合：db;"></a><strong>2. 显示当前数据库对象或集合：</strong><code>db</code>;</h3><h3 id="3-连接到一个指定的数据库-use"><a href="#3-连接到一个指定的数据库-use" class="headerlink" title="3. 连接到一个指定的数据库:  use;"></a><strong>3. 连接到一个指定的数据库:</strong>  <code>use</code>;</h3><a id="more"></a>
-<h3 id="4-关系型数据库和mongodb的术语："><a href="#4-关系型数据库和mongodb的术语：" class="headerlink" title="4. 关系型数据库和mongodb的术语："></a><strong>4. 关系型数据库和mongodb的术语：</strong></h3><p><img src="http://img.blog.csdn.net/20170610182030359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmx5aW5ncGlnMjAxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+        <h2 id="mongoDB常用命令"><a href="#mongoDB常用命令" class="headerlink" title="mongoDB常用命令"></a>mongoDB常用命令</h2><h3 id="1-展示数据库：show-dbs；"><a href="#1-展示数据库：show-dbs；" class="headerlink" title="1. 展示数据库：show dbs；"></a><strong>1. 展示数据库：</strong><code>show dbs</code>；</h3><h3 id="2-显示当前数据库对象或集合：db"><a href="#2-显示当前数据库对象或集合：db" class="headerlink" title="2. 显示当前数据库对象或集合：db;"></a><strong>2. 显示当前数据库对象或集合：</strong><code>db</code>;</h3><h3 id="3-连接到一个指定的数据库-use"><a href="#3-连接到一个指定的数据库-use" class="headerlink" title="3. 连接到一个指定的数据库:  use;"></a><strong>3. 连接到一个指定的数据库:</strong>  <code>use</code>;</h3><h3 id="4-关系型数据库和mongodb的术语："><a href="#4-关系型数据库和mongodb的术语：" class="headerlink" title="4. 关系型数据库和mongodb的术语："></a><strong>4. 关系型数据库和mongodb的术语：</strong></h3><p><img src="http://img.blog.csdn.net/20170610182030359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmx5aW5ncGlnMjAxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><a id="more"></a></p>
 <h3 id="5-集合就是-MongoDB-文档组，类似于-RDBMS中的表格，例如："><a href="#5-集合就是-MongoDB-文档组，类似于-RDBMS中的表格，例如：" class="headerlink" title="5. 集合就是 MongoDB 文档组，类似于 RDBMS中的表格，例如："></a><strong>5. 集合就是 MongoDB 文档组，</strong>类似于 RDBMS中的表格，例如：</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="attr">"site"</span>:<span class="string">"www.baidu.com"</span>&#125;</div><div class="line">&#123;<span class="attr">"site"</span>:<span class="string">"www.google.com"</span>,<span class="attr">"name"</span>:<span class="string">"Google"</span>&#125;</div><div class="line">&#123;<span class="attr">"site"</span>:<span class="string">"www.runoob.com"</span>,<span class="attr">"name"</span>:<span class="string">"菜鸟教程"</span>,<span class="attr">"num"</span>:<span class="number">5</span>&#125;</div></pre></td></tr></table></figure>
 <p>&emsp;&emsp;集合存在于数据库中，集合没有固定的结构，这意味着你在对集合可以插入不同格式和类型的数据，但通常情况下我们插入集合的数据都会有一定的关联性。</p>
 <h3 id="6-创建myblog数据库："><a href="#6-创建myblog数据库：" class="headerlink" title="**6.创建myblog数据库："></a>**6.创建myblog数据库：</h3><p>**<code>use myblog</code>,此时还不能用<code>show dbs</code>来查看，因为没有数据。当我们插入数据的时候才能看到数据列表：<code>db.myblog.insert({name:&#39;bangbang&#39;})</code> ;</p>
