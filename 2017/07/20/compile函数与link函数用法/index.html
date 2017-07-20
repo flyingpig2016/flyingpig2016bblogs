@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//www.iambangbang.club">
-  <title>Archives: 2017/6 | flyingpig</title>
+  <title>compile函数与link函数用法 | flyingpig</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
-<meta name="keywords" content="hexo,yilia,前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="flyingpig">
-<meta property="og:url" content="//www.iambangbang.club/archives/2017/06/index.html">
+  <meta name="description" content="compile函数与link函数用法###compile和link函数用法？  compile函数的作用是对指令的模板进行转换； link作用是在模型和视图之间建立关联，包括在元素上注册事件监听； scope在link阶段才会被绑定到元素上，因此compile阶段操scope会报错 对于同一个指令的多个实例，compile只会执行一次，而link对于指令的每个实例都会执行一次； 一般情况下我们只要">
+<meta name="keywords" content="Angularjs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="compile函数与link函数用法">
+<meta property="og:url" content="//www.iambangbang.club/2017/07/20/compile函数与link函数用法/index.html">
 <meta property="og:site_name" content="flyingpig">
-<meta property="og:description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
+<meta property="og:description" content="compile函数与link函数用法###compile和link函数用法？  compile函数的作用是对指令的模板进行转换； link作用是在模型和视图之间建立关联，包括在元素上注册事件监听； scope在link阶段才会被绑定到元素上，因此compile阶段操scope会报错 对于同一个指令的多个实例，compile只会执行一次，而link对于指令的每个实例都会执行一次； 一般情况下我们只要">
+<meta property="og:updated_time" content="2017-07-20T01:30:02.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flyingpig">
-<meta name="twitter:description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
+<meta name="twitter:title" content="compile函数与link函数用法">
+<meta name="twitter:description" content="compile函数与link函数用法###compile和link函数用法？  compile函数的作用是对指令的模板进行转换； link作用是在模型和视图之间建立关联，包括在元素上注册事件监听； scope在link阶段才会被绑定到元素上，因此compile阶段操scope会报错 对于同一个指令的多个实例，compile只会执行一次，而link对于指令的每个实例都会执行一次； 一般情况下我们只要">
   
   
     <link rel="icon" href="/favicon.jpg">
@@ -192,60 +193,216 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-compile函数与link函数用法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/22/01note/" class="archive-article-date">
-  	<time datetime="2017-06-22T15:18:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/22/01note/">01note</a>
+    <h1 class="article-title" itemprop="name">
+      compile函数与link函数用法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/20/compile函数与link函数用法/" class="archive-article-date">
+  	<time datetime="2017-07-20T01:28:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-20</time>
+</a>
+        
+      </header>
+    
+            <!-- 目录内容 -->
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+                <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+                <strong class="toc-title">文章目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#compile函数与link函数用法"><span class="toc-number">1.</span> <span class="toc-text">compile函数与link函数用法</span></a></li></ol>
+           </div>
+           <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+                };
+            function showBtn(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:none");
+                show_toc_btn.setAttribute("style","display:block");
+                };
+           </script>
+             
+        <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="compile函数与link函数用法"><a href="#compile函数与link函数用法" class="headerlink" title="compile函数与link函数用法"></a>compile函数与link函数用法</h2><p>###compile和link函数用法？</p>
+<ul>
+<li>compile函数的作用是对指令的模板进行转换；</li>
+<li>link作用是在模型和视图之间建立关联，包括在元素上注册事件监听；</li>
+<li>scope在link阶段才会被绑定到元素上，因此compile阶段操scope会报错</li>
+<li>对于同一个指令的多个实例，compile只会执行一次，而link对于指令的每个实例都会执行一次；</li>
+<li>一般情况下我们只要编写link函数就够了(请看第二个例子)</li>
+<li>请注意，如果你编写的自定义的compile函数的同时自定义的link函数无效，因为compile函数应该返回一个link函数供后续处理（请看第一个例子）</li>
+</ul>
+<p>例子一，html内容：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">hello</span>&gt;</span><span class="tag">&lt;/<span class="name">hello</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">altofhello</span>=<span class="string">"5"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span> 棒棒你好! <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>js里面：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myModule = angular.module(<span class="string">'myModule'</span>, []); </div><div class="line">myModule.directive(<span class="string">'hello'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">restrict</span>:<span class="string">'EA'</span>, </div><div class="line">        <span class="attr">template</span>:<span class="string">'&lt;div&gt;Hi everyone !&lt;/div&gt;'</span>, </div><div class="line">        <span class="attr">replace</span>:<span class="string">'true'</span>, </div><div class="line">        <span class="attr">link</span> : <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attrs, controller</span>) </span>&#123;</div><div class="line">            element.on(<span class="string">'mouseover'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="comment">// console.log('鼠标进入'); </span></div><div class="line">            &#125;)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;).directive(<span class="string">'altofhello'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">restrict</span> : <span class="string">'A'</span>,</div><div class="line">        <span class="attr">compile</span> : <span class="function"><span class="keyword">function</span>(<span class="params">element,attrs,transclude</span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'指令编译。。。。'</span>);</div><div class="line">            <span class="keyword">var</span> tpl = element.children().clone();</div><div class="line">            <span class="built_in">console</span>.log(tpl);</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;attrs.altofhello<span class="number">-1</span>; i++)&#123;</div><div class="line">                element.append(tpl.clone());</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">scope,element,attrs,controller</span>)</span>&#123; <span class="comment">//其实输出一个link函数,compile规定(不输出也不报错)</span></div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'指令链接....'</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">link</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;     <span class="comment">//注意：这个link函数是没有用的，所以他们俩不同时使用</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'我自己的link函数'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>实例二:<br>html内容：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-repeat</span>=<span class="string">"i in [1,2]"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">repeater</span>=<span class="string">"2"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>你好，棒棒！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>js内容：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myModule = angular.module(<span class="string">'myModule'</span>,[]);</div><div class="line">myModule.directive(<span class="string">'repeater'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">restrict</span> : <span class="string">'AE'</span>,</div><div class="line">        <span class="attr">compile</span> : <span class="function"><span class="keyword">function</span>(<span class="params">element,attrs,transclude</span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'repeat ..... compile.....'</span>);      <span class="comment">//控制台只输出1次</span></div><div class="line">            <span class="comment">//var tpl = element.children().clone();</span></div><div class="line">            <span class="comment">//for(var i=0; i&lt;attrs.repeater-1; i++)&#123;</span></div><div class="line">            <span class="comment">//    element.append(tpl.clone());</span></div><div class="line">            <span class="comment">//&#125;</span></div><div class="line">            <span class="comment">//返回link函数</span></div><div class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">scope,element,attrs,controller</span>)</span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'repeat.......link.......'</span>);   <span class="comment">//控制台执行2次</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>github源码：<a href="https://github.com/flyingpig2016/angular-demos/tree/master/08link-compile" target="_blank" rel="external">compile函数与link函数用法</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipy.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">notes</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Angularjs</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.iambangbang.club/2017/07/20/compile函数与link函数用法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/07/19/理解ng中的依赖和注入/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">理解ng中的依赖和注入</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
   
 
-    
+
+  
+
+
+  
+    <section id="comments">    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper" sid="compile函数与link函数用法"></div>
+      <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+      <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",    
+        productKey: "cc67d8b92f2e42a1af6e43e415055393",
+        target: "cloud-tie-wrapper"   
+      };
+      var yunManualLoad = true;
+      Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+      </script>
+    </section>
+  
 
 
           </div>
@@ -269,8 +426,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -194,6 +194,80 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-compile函数与link函数用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/20/compile函数与link函数用法/">compile函数与link函数用法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/20/compile函数与link函数用法/" class="archive-article-date">
+  	<time datetime="2017-07-20T01:28:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-20</time>
+</a>
+        
+      </header>
+    
+            <!-- 目录内容 -->
+             
+        <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="compile函数与link函数用法"><a href="#compile函数与link函数用法" class="headerlink" title="compile函数与link函数用法"></a>compile函数与link函数用法</h2><p>###compile和link函数用法？</p>
+<ul>
+<li>compile函数的作用是对指令的模板进行转换；</li>
+<li>link作用是在模型和视图之间建立关联，包括在元素上注册事件监听；</li>
+<li>scope在link阶段才会被绑定到元素上，因此compile阶段操scope会报错</li>
+<li>对于同一个指令的多个实例，compile只会执行一次，而link对于指令的每个实例都会执行一次；</li>
+<li>一般情况下我们只要编写link函数就够了(请看第二个例子)</li>
+<li>请注意，如果你编写的自定义的compile函数的同时自定义的link函数无效，因为compile函数应该返回一个link函数供后续处理（请看第一个例子）</li>
+</ul>
+<p>例子一，html内容：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">hello</span>&gt;</span><span class="tag">&lt;/<span class="name">hello</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">altofhello</span>=<span class="string">"5"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span> 棒棒你好! <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>js里面：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myModule = angular.module(<span class="string">'myModule'</span>, []); </div><div class="line">myModule.directive(<span class="string">'hello'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">restrict</span>:<span class="string">'EA'</span>, </div><div class="line">        <span class="attr">template</span>:<span class="string">'&lt;div&gt;Hi everyone !&lt;/div&gt;'</span>, </div><div class="line">        <span class="attr">replace</span>:<span class="string">'true'</span>, </div><div class="line">        <span class="attr">link</span> : <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attrs, controller</span>) </span>&#123;</div><div class="line">            element.on(<span class="string">'mouseover'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="comment">// console.log('鼠标进入'); </span></div><div class="line">            &#125;)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;).directive(<span class="string">'altofhello'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">restrict</span> : <span class="string">'A'</span>,</div><div class="line">        <span class="attr">compile</span> : <span class="function"><span class="keyword">function</span>(<span class="params">element,attrs,transclude</span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'指令编译。。。。'</span>);</div><div class="line">            <span class="keyword">var</span> tpl = element.children().clone();</div><div class="line">            <span class="built_in">console</span>.log(tpl);</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;attrs.altofhello<span class="number">-1</span>; i++)&#123;</div><div class="line">                element.append(tpl.clone());</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">scope,element,attrs,controller</span>)</span>&#123; <span class="comment">//其实输出一个link函数,compile规定(不输出也不报错)</span></div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'指令链接....'</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">link</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;     <span class="comment">//注意：这个link函数是没有用的，所以他们俩不同时使用</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'我自己的link函数'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2017/07/20/compile函数与link函数用法/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Angularjs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/20/compile函数与link函数用法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-理解ng中的依赖和注入" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -288,14 +362,6 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="angularjs子定义Service用法？"><a href="#angularjs子定义Service用法？" class="headerlink" title="angularjs子定义Service用法？"></a>angularjs子定义Service用法？</h3><h4 id="http的用法？"><a href="#http的用法？" class="headerlink" title="$http的用法？"></a>$http的用法？</h4><p>&emsp;&emsp;<code>$http</code>是Angularjs内置的服务，用起来可以链式调用，用法如下：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">myMdoule.controller(<span class="string">'LoadDataCtrl'</span>,[<span class="string">'$scope'</span>,<span class="string">'$http'</span>,<span class="function"><span class="keyword">function</span><span class="params">($scope,$http)</span></span>&#123;</div><div class="line">    $http(&#123;</div><div class="line">        method : <span class="string">'get'</span>,</div><div class="line">        url : <span class="string">'js/data.json'</span></div><div class="line">    &#125;).success(<span class="function"><span class="keyword">function</span><span class="params">(data,status,headers,config)</span></span>&#123;</div><div class="line">        console.<span class="built_in">log</span>(<span class="string">'success.....'</span>);</div><div class="line">        console.<span class="built_in">log</span>(data);</div><div class="line">        $scope.users = data;</div><div class="line">    &#125;).<span class="built_in">error</span>(<span class="function"><span class="keyword">function</span><span class="params">(data,status,headers,config)</span></span>&#123;</div><div class="line">            console.<span class="built_in">log</span>(<span class="string">'error'</span>);</div><div class="line">    &#125;)</div><div class="line">&#125;])</div></pre></td></tr></table></figure></p>
-<h4 id="自定义service用法？"><a href="#自定义service用法？" class="headerlink" title="自定义service用法？"></a>自定义service用法？</h4><ul>
-<li>Service都是单例的</li>
-<li>Service由$injector负责实例化</li>
-<li>Service在整个应用的声明周期中存在，可以用来共享数据</li>
-<li>在需要使用的地方利用依赖注入机制注入Service</li>
-<li>自定义的Service需要写在内置Service后面</li>
-<li>内置Service的命名以$符号开头，自定义Service应该避免</li>
-</ul>
         
           <a class="article-more-a" href="/2017/07/19/ng中定义service和filter的方法/#more">more >></a>
         
@@ -336,82 +402,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-scope的绑定策略" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/scope的绑定策略/">scope的绑定策略</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/18/scope的绑定策略/" class="archive-article-date">
-  	<time datetime="2017-07-18T05:31:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
-</a>
-        
-      </header>
-    
-            <!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="初探scope的用法？"><a href="#初探scope的用法？" class="headerlink" title="初探scope的用法？"></a>初探scope的用法？</h3><p>我们创建一个例子：<br>在第一个html文件中：<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="section">&lt;hello&gt;</span><span class="section">&lt;/hello&gt;</span></div><div class="line"><span class="section">&lt;hello&gt;</span><span class="section">&lt;/hello&gt;</span></div><div class="line"><span class="section">&lt;hello&gt;</span><span class="section">&lt;/hello&gt;</span></div><div class="line"><span class="section">&lt;hello&gt;</span><span class="section">&lt;/hello&gt;</span></div></pre></td></tr></table></figure></p>
-<p>js代码：</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var myModule = angular.module(<span class="symbol">'myModule</span>',[]);</div><div class="line">myModule.directive(<span class="symbol">'hello</span>',<span class="keyword">function</span>()&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        scope : &#123;&#125;,</div><div class="line">        restrict : '<span class="type">AE</span>',</div><div class="line">        template : '&lt;<span class="type">div</span>&gt;&lt;input <span class="keyword">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"userName"</span> /&gt;&#123;&#123;userName&#125;&#125;&lt;/div&gt;',</div><div class="line">        replace : <span class="type">true</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>以上代码，当不存在<code>scope:{}</code>的时候，在其中一个input输入，其他都发生变化，当存在的时候，输入一个，其他不发生变化。</p>
-<h3 id="scope的绑定策略有三种方法？"><a href="#scope的绑定策略有三种方法？" class="headerlink" title="scope的绑定策略有三种方法？"></a><code>scope</code>的绑定策略有三种方法？</h3><ul>
-<li><p><code>@</code> ：把当前属性作为字符串传递，你还可以绑定来自外层<code>scope</code>的值，在属性值中插入双括号即可，此方法是单项绑定；</p>
-</li>
-<li><p><code>=</code> ：与父scope中的属性进行双向绑定</p>
-</li>
-<li><p><code>&amp;</code> ：传递来自父scope的函数，稍后再调用.</p>
-        
-          <a class="article-more-a" href="/2017/07/18/scope的绑定策略/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Angularjs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/18/scope的绑定策略/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -507,11 +500,11 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Angularjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">notes</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">notes</a>
+                <a href="javascript:void(0)" class="js-tag color5">Angularjs</a>
               </li>
              
               <li class="article-tag-list-item">
