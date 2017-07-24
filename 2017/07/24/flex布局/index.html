@@ -6,18 +6,45 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//www.iambangbang.club">
-  <title>flyingpig</title>
+  <title>flex布局 | flyingpig</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
+  <meta name="description" content="flex布局flex布局概述？&amp;emsp;&amp;emsp;flex是flexible Box的缩写，意为“弹性布局”，用来为盒模型提供最大的灵活性，设置为flex布局之后，子元素的float、clear、vertical-align属性将失效。&amp;emsp;&amp;emsp;任何一个容器都可以指定为flex布局12345#box1&amp;#123;    display : flex;    width:300px">
 <meta name="keywords" content="hexo,yilia,前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="flyingpig">
-<meta property="og:url" content="//www.iambangbang.club/page/3/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flex布局">
+<meta property="og:url" content="//www.iambangbang.club/2017/07/24/flex布局/index.html">
 <meta property="og:site_name" content="flyingpig">
-<meta property="og:description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
+<meta property="og:description" content="flex布局flex布局概述？&amp;emsp;&amp;emsp;flex是flexible Box的缩写，意为“弹性布局”，用来为盒模型提供最大的灵活性，设置为flex布局之后，子元素的float、clear、vertical-align属性将失效。&amp;emsp;&amp;emsp;任何一个容器都可以指定为flex布局12345#box1&amp;#123;    display : flex;    width:300px">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/flex-direction.png?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/nowrap.png?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/wrap.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/wrap-reverse.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/flex-start.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/flex-end.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/center.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/space-between.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/space-around.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/align-flex-start.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/align-flex-end.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/align-center.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/baseline.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/stretch.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/content-flex-start.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/content-flex-end.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/content-center.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/content-stretch.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/content-space-between.jpg?raw=truebetween.jpg">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/content-space-around.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/order.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/flex-grow.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/flex-shrink.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/flex-basis.jpg?raw=true">
+<meta property="og:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/align-self.jpg?raw=true">
+<meta property="og:updated_time" content="2017-07-24T09:11:07.278Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flyingpig">
-<meta name="twitter:description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
+<meta name="twitter:title" content="flex布局">
+<meta name="twitter:description" content="flex布局flex布局概述？&amp;emsp;&amp;emsp;flex是flexible Box的缩写，意为“弹性布局”，用来为盒模型提供最大的灵活性，设置为flex布局之后，子元素的float、clear、vertical-align属性将失效。&amp;emsp;&amp;emsp;任何一个容器都可以指定为flex布局12345#box1&amp;#123;    display : flex;    width:300px">
+<meta name="twitter:image" content="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/flex-direction.png?raw=true">
   
   
     <link rel="icon" href="/favicon.jpg">
@@ -192,218 +219,289 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-directive-自定义指令的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-flex布局" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/directive-自定义指令的方法/">directive-自定义指令的方法.md</a>
+    <h1 class="article-title" itemprop="name">
+      flex布局
     </h1>
   
 
         
-        <a href="/2017/07/18/directive-自定义指令的方法/" class="archive-article-date">
-  	<time datetime="2017-07-18T03:14:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
+        <a href="/2017/07/24/flex布局/" class="archive-article-date">
+  	<time datetime="2017-07-24T08:29:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-24</time>
 </a>
         
       </header>
     
             <!-- 目录内容 -->
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+                <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+                <strong class="toc-title">文章目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#flex布局"><span class="toc-number">1.</span> <span class="toc-text">flex布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#flex布局概述？"><span class="toc-number">1.1.</span> <span class="toc-text">flex布局概述？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一：父容器属性"><span class="toc-number">1.2.</span> <span class="toc-text">一：父容器属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-flex-direction-属性"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. flex-direction 属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-flex-wrap-属性"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.flex-wrap 属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-flex-fow-属性"><span class="toc-number">1.3.</span> <span class="toc-text">3. flex-fow 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-justify-content-属性"><span class="toc-number">1.4.</span> <span class="toc-text">4. justify-content 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-align-items-属性"><span class="toc-number">1.5.</span> <span class="toc-text">5. align-items 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-align-content-属性"><span class="toc-number">1.6.</span> <span class="toc-text">6. align-content 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一：子元素属性"><span class="toc-number">1.7.</span> <span class="toc-text">一：子元素属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-order属性"><span class="toc-number">1.8.</span> <span class="toc-text">1. order属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-flex-grow属性"><span class="toc-number">1.9.</span> <span class="toc-text">2. flex-grow属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-flex-shrink属性"><span class="toc-number">1.10.</span> <span class="toc-text">3.flex-shrink属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-flex-basis"><span class="toc-number">1.11.</span> <span class="toc-text">4.flex-basis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-flex属性"><span class="toc-number">1.12.</span> <span class="toc-text">5.flex属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-align-self属性"><span class="toc-number">1.13.</span> <span class="toc-text">6.align-self属性</span></a></li></ol></li></ol>
+           </div>
+           <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+                };
+            function showBtn(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:none");
+                show_toc_btn.setAttribute("style","display:block");
+                };
+           </script>
              
         <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p><b>This is a angular-demos, It can show my progress of study.</b></p>
-<h2 id="02directive——Angularjs的创建指令方法"><a href="#02directive——Angularjs的创建指令方法" class="headerlink" title="02directive——Angularjs的创建指令方法"></a>02directive——Angularjs的创建指令方法</h2><h3 id="restrict-值分类"><a href="#restrict-值分类" class="headerlink" title="restrict 值分类:"></a>restrict 值分类:</h3><ul>
-<li>E 作为元素名使用,例如：<code>&lt;hello&gt;&lt;/hello&gt;</code>  </li>
-<li>A 作为属性使用(默认),例如：<code>&lt;div hello&gt;&lt;/div&gt;</code></li>
-<li>C 作为类名使用 , 例如：<code>&lt;div class=&quot;hello&quot;&gt;&lt;/div&gt;</code></li>
-<li>M 作为注释使用,  例如：<code>&lt;!--directive:hello--&gt;</code><h3 id="directive的templateUrl属性"><a href="#directive的templateUrl属性" class="headerlink" title="directive的templateUrl属性"></a>directive的templateUrl属性</h3>通常我们这样写，template，但是如果模板里面东西很多，我们就需要独立出来一个html文件，<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">myApp.directive(<span class="string">'hello'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span>&#123;</div><div class="line">        restrict : <span class="string">'AEMC'</span>, <span class="comment">//- A 作为属性使用(默认),例如：`&lt;div hello&gt;&lt;/div&gt;`</span></div><div class="line">        template : <span class="string">'&lt;div&gt;Hello everyone, I am bangbang!&lt;/div&gt;'</span>,</div><div class="line">        replace : <span class="keyword">true</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+        <h2 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h2><h3 id="flex布局概述？"><a href="#flex布局概述？" class="headerlink" title="flex布局概述？"></a>flex布局概述？</h3><p>&emsp;&emsp;flex是flexible Box的缩写，意为“弹性布局”，用来为盒模型提供最大的灵活性，设置为flex布局之后，子元素的<strong>float、clear、vertical-align</strong>属性将失效。<br>&emsp;&emsp;任何一个容器都可以指定为flex布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#box1</span>&#123;</div><div class="line">    <span class="attribute">display </span>: flex;</div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其实，总体上来说，flex布局分为两类：父容器属性和子容器属性</p>
+<h3 id="一：父容器属性"><a href="#一：父容器属性" class="headerlink" title="一：父容器属性"></a>一：父容器属性</h3><p>&emsp;&emsp; 父容器属性用来控制子元素的显示方式，有6种：</p>
+<ol>
+<li>flex-direction ：设置主轴(就是x轴)的方向，默认row，x轴从左到右；</li>
+<li>flex-wrap ： 子元素换行方式，默认nowrap；</li>
+<li>flex-fow ： flex-direction和flex-wrap的简写，默认row nowrap；</li>
+<li>justify-content ： 子元素在主轴上的对齐方式，默认flex-start左对齐；</li>
+<li>align-items ： 定义项目在交叉轴上如何对齐(就是y轴)</li>
+<li>align-content ： 定义了多根轴线的对齐方式。</li>
+</ol>
+<h4 id="1-flex-direction-属性"><a href="#1-flex-direction-属性" class="headerlink" title="1. flex-direction 属性"></a>1. flex-direction 属性</h4><p>&emsp;&emsp;决定主轴(x轴)的方向，有四个属性：</p>
+<ul>
+<li>row（默认值）：主轴为水平方向，起点在左端。   </li>
+<li>row-reverse：主轴为水平方向，起点在右端。</li>
+<li>column：主轴为垂直方向，起点在上沿。</li>
+<li>column-reverse：主轴为垂直方向，起点在下沿。</li>
+</ul>
+<a id="more"></a>
+<p>用法：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#container</span>&#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="comment">/* flex-direction: row | row-reverse | column | column-reverse; */</span></div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.inner</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">background</span>:orange;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">10px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;<span class="number">1</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;<span class="number">2</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;<span class="number">3</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure>
+<p>对应的样式：<br><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/flex-direction.png?raw=true" alt="flex-direction"></p>
+<h4 id="2-flex-wrap-属性"><a href="#2-flex-wrap-属性" class="headerlink" title="2.flex-wrap 属性"></a>2.flex-wrap 属性</h4><p>&emsp;&emsp;决定子元素(也称为项目)的换行方式<br>&emsp;&emsp;默认情况下，项目都排在一条线上（即nowrap；）上。flex-wrap属性定义，如果一条轴线排不下，就可以设置另起一行(wrap).<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#container</span>&#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="comment">/* flex-wrap: wrap | nowrap | wrap-reverse; */</span></div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.inner</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">background</span>:orange;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">10px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>默认：nowrap 不换行</p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/nowrap.png?raw=true" alt="nowrap"></p>
+<p>wrap ： 换行</p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/wrap.jpg?raw=true" alt="wrap"></p>
+<p>wrap-reverse ：换行，第二行在第一行上面，从左到右</p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/wrap-reverse.jpg?raw=true" alt="wrap-reverse"></p>
+<h3 id="3-flex-fow-属性"><a href="#3-flex-fow-属性" class="headerlink" title="3. flex-fow 属性"></a>3. flex-fow 属性</h3><p>&emsp;&emsp;flex-direction和flex-wrap的简写，默认row</p>
+<h3 id="4-justify-content-属性"><a href="#4-justify-content-属性" class="headerlink" title="4. justify-content 属性"></a>4. justify-content 属性</h3><p>&emsp;&emsp;子元素在主轴上的对齐方式，默认flex-start左对齐；</p>
+<ul>
+<li>flex-start ： 默认，左对齐</li>
+<li>flex-end ： 右对齐</li>
+<li>center ： 居中对齐</li>
+<li>space-between ： 两端对齐，子元素(项目)之间间隔相等</li>
+<li>space-around ： 每个子元素两侧的间隔相等。所以，子元素之间的间隔比子元素与边框的间隔大一倍。<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#container</span>&#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="comment">/* justify-content: flex-start | flex-end | center | space-between | space-around; */</span></div><div class="line">    <span class="attribute">justify-content</span>: space-around;</div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.inner</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">60px</span>;</div><div class="line">    <span class="attribute">background</span>:orange;</div><div class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#fff</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>用templateUrl属性独立出html文件,<strong>注意：</strong>如果用longDirective命名，引用的时候用<code>&lt;long-directive&gt;&lt;/long-directive&gt;</code>,要不然就用纯小写字母</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">myApp.directive(<span class="string">'longDirective'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        restrict : <span class="string">'AEMC'</span>,  <span class="comment">//- E 作为元素名使用,例如：`&lt;hello&gt;&lt;/hello&gt;`  </span></div><div class="line">        templateUrl : <span class="string">'tpls/long.html'</span>,</div><div class="line">        replace : <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/07/18/directive-自定义指令的方法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Angularjs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/18/directive-自定义指令的方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-AngularJs中ui-router使用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/14/AngularJs中ui-router使用方法/">AngularJs中ui-router使用方法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/14/AngularJs中ui-router使用方法/" class="archive-article-date">
-  	<time datetime="2017-07-14T10:39:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-14</time>
-</a>
-        
-      </header>
-    
-            <!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一：为什么使用ui-router？"><a href="#一：为什么使用ui-router？" class="headerlink" title="一：为什么使用ui-router？"></a>一：为什么使用ui-router？</h3><p>&emsp;&emsp;如果使用原生router的话，也就是当我们在index.html页面引用<code>angular-route.js</code>的时候，例如：我们在index.html页面的<code>body</code>下加入<code>&lt;div class=&quot;page &quot; ng-view&gt;&lt;/div&gt;</code>，然后我们在<code>app.js</code>中写入（具体代码看文章末尾的下载链接）：<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var bookStoreApp = angular.module(<span class="string">'bookStoreApp'</span>, [</div><div class="line">    <span class="string">'ngRoute'</span>, <span class="string">'ngAnimate'</span>, <span class="string">'bookStoreCtrls'</span>, <span class="string">'bookStoreFilters'</span>,</div><div class="line">    <span class="string">'bookStoreServices'</span>, <span class="string">'bookStoreDirectives'</span></div><div class="line">]);</div><div class="line"></div><div class="line">bookStoreApp.config(<span class="keyword">function</span>($routeProvider) &#123;</div><div class="line">    $routeProvider.when(<span class="string">'/hello'</span>, &#123;</div><div class="line">        templateUrl: <span class="string">'tpls/hello.html'</span>,</div><div class="line">        controller: <span class="string">'HelloCtrl'</span></div><div class="line">    &#125;).when(<span class="string">'/list'</span>, &#123;</div><div class="line">        templateUrl: <span class="string">'tpls/bookList.html'</span>,</div><div class="line">        controller: <span class="string">'BookListCtrl'</span></div><div class="line">    &#125;).otherwise(&#123;</div><div class="line">        redirectTo: <span class="string">'/hello'</span></div><div class="line">    &#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>此时，我们首页默认显示hello，当我们在页面中点击下一页链接的时候，我们跳转到以list为模板的页面。以上是简单的页面跳转，但是如果我们需要稍微复杂一点的页面，例如我们想要写个上面一个是菜单栏，菜单栏下面还有点击的页面，就像是选项卡一样，但是分别进入了不同的页面（实际上是angularjs路由机制中替换了某个模板），如下图所示：<br><img src="http://img.blog.csdn.net/20170714171942351?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmx5aW5ncGlnMjAxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>我们就需要用到嵌套的路由，因此，我们需要用到angularjs中ui.router模块。<br>
-        
-          <a class="article-more-a" href="/2017/07/14/AngularJs中ui-router使用方法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Angularjs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/14/AngularJs中ui-router使用方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-js-touch事件及gesture-手势-事件详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/js-touch事件及gesture-手势-事件详解/">js-touch事件及gesture-手势-事件详解</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/10/js-touch事件及gesture-手势-事件详解/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        
-      </header>
-    
-            <!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一：touch事件分类？"><a href="#一：touch事件分类？" class="headerlink" title="一：touch事件分类？"></a>一：touch事件分类？</h3><ol>
-<li>touchstart：当手指触摸屏幕时触发。不管有多少个手指放在了屏幕上，只要再触摸一下屏幕就会触发。在此，我用小米的google浏览器做了一个实验，添加一个计数器，用来查看屏幕上手指触摸的次数，代码如下：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line">	<span class="built_in">document</span>.addEventListener(<span class="string">'touchstart'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">		myDiv.innerHTML = <span class="string">'触屏的次数：'</span>+ i++;</div><div class="line">	&#125;,<span class="literal">false</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>flex-start:</p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/flex-start.jpg?raw=true" alt="flex-start"></p>
+<p>flex-end : </p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/flex-end.jpg?raw=true" alt="flex-end"></p>
+<p>center : </p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/center.jpg?raw=true" alt="center"></p>
+<p>space-between : </p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/space-between.jpg?raw=true" alt="space-between"></p>
+<p>space-around ：</p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/space-around.jpg?raw=true" alt="spance-around"></p>
+<h3 id="5-align-items-属性"><a href="#5-align-items-属性" class="headerlink" title="5. align-items 属性"></a>5. align-items 属性</h3><p>&emsp;&emsp;定义子元素在交叉轴上如何对齐</p>
+<ul>
+<li>flex-start：交叉轴的起点对齐;</li>
+<li>flex-end：交叉轴的终点对齐;</li>
+<li>center：交叉轴的中点对齐;</li>
+<li>baseline: 项目的第一行文字的基线对齐,注意观察第一行文字的位置;</li>
+<li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度.<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#container</span>&#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="comment">/* align-items: flex-start | flex-end | center | baseline | stretch; */</span></div><div class="line">    <span class="attribute">align-items</span>: stretch ;</div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">250px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.inner</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">60px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">50px</span>;</div><div class="line">    <span class="attribute">background</span>:orange;</div><div class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#fff</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-</ol>
-<p>2.touchmove：当手指在屏幕上滑动的时候触发该是事件，在这期间可以通过event.preventDefault()来阻止滚动；<br>
-        
-          <a class="article-more-a" href="/2017/07/10/js-touch事件及gesture-手势-事件详解/#more">more >></a>
-        
+</ul>
+<p>flex-start : </p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/align-flex-start.jpg?raw=true" alt="flex-start"></p>
+<p>flex-end : </p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/align-flex-end.jpg?raw=true" alt="flex-end"></p>
+<p>center : </p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/align-center.jpg?raw=true" alt="center"></p>
+<p>baseline : 注意，测试stretch的时候需要把div这样设置：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span> style=<span class="string">"height:200px;line-height:200px;"</span>&gt;<span class="number">1</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;<span class="number">2</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"inner"</span>&gt;<span class="number">3</span>&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/baseline.jpg?raw=true" alt="baseline"></p>
+<p>stretch：注意，测试stretch的时候需要去掉高度，然后看效果：</p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/stretch.jpg?raw=true" alt="stretch"></p>
+<h3 id="6-align-content-属性"><a href="#6-align-content-属性" class="headerlink" title="6. align-content 属性"></a>6. align-content 属性</h3><p>&emsp;&emsp;属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用.</p>
+<ul>
+<li>flex-start：与交叉轴的起点对齐。</li>
+<li>flex-end：与交叉轴的终点对齐。</li>
+<li>center：与交叉轴的中点对齐。</li>
+<li>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
+<li>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
+<li>stretch（默认值）：轴线占满整个交叉轴。<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#container</span>&#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">flex-wrap</span>: wrap;</div><div class="line">    <span class="comment">/* align-content: flex-start | flex-end | center | space-between | space-around | stretch; */</span></div><div class="line">    <span class="attribute">align-content</span>: flex-start;</div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">250px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.inner</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">60px</span>;</div><div class="line">        <span class="attribute">height</span>:<span class="number">50px</span>; </div><div class="line">    <span class="attribute">background</span>:orange;</div><div class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#fff</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/content-flex-start.jpg?raw=true" alt="flex-start"> &emsp;&emsp;<br><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/content-flex-end.jpg?raw=true" alt="flex-end"><br><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/content-center.jpg?raw=true" alt="center"> &emsp;&emsp;<br><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/content-stretch.jpg?raw=true" alt="stretch"><br><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/content-space-between.jpg?raw=truebetween.jpg" alt="space-between"> &emsp;&emsp;<br><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/content-space-around.jpg?raw=true" alt="space-around"> </p>
+<h3 id="一：子元素属性"><a href="#一：子元素属性" class="headerlink" title="一：子元素属性"></a>一：子元素属性</h3><pre><code>子元素的属性有六种：
+</code></pre><ul>
+<li>order ：定义项目的排列顺序。数值越小，排列越靠前，默认为0。</li>
+<li>flex-grow ： 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</li>
+<li>flex-shrink ：定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</li>
+<li>flex-basis ： 定义了在分配多余空间之前，项目占据的主轴空间（main size）</li>
+<li>flex ： 是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</li>
+<li>align-self ： 允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</li>
+</ul>
+<h3 id="1-order属性"><a href="#1-order属性" class="headerlink" title="1. order属性"></a>1. order属性</h3><p>&emsp;&emsp;定义项目的排列顺序，数值越小排列越靠前，默认为0<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#container</span>&#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">flex-direction</span>: row;</div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.inner</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">60px</span>;</div><div class="line">        <span class="attribute">height</span>:<span class="number">50px</span>; </div><div class="line">    <span class="attribute">background</span>:orange;</div><div class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#fff</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.item</span>&#123;</div><div class="line">    <span class="attribute">order </span>: -<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/order.jpg?raw=true" alt="order"></p>
+<h3 id="2-flex-grow属性"><a href="#2-flex-grow属性" class="headerlink" title="2. flex-grow属性"></a>2. flex-grow属性</h3><p>&emsp;&emsp;定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">    <span class="selector-id">#container</span>&#123;</div><div class="line">        <span class="attribute">display</span>: flex;</div><div class="line">        <span class="attribute">flex-direction</span>: row;</div><div class="line">        <span class="attribute">width</span>:<span class="number">500px</span>;</div><div class="line">        <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">        <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-class">.inner</span>&#123;</div><div class="line">        <span class="attribute">width</span>:<span class="number">60px</span>;</div><div class="line">        <span class="attribute">height</span>:<span class="number">50px</span>; </div><div class="line">        <span class="attribute">background</span>:orange;</div><div class="line">        <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#fff</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-class">.grow0</span>&#123;</div><div class="line">        <span class="attribute">flex-grow </span>: <span class="number">0</span>;</div><div class="line">    &#125; </div><div class="line">    <span class="selector-class">.grow1</span>&#123;</div><div class="line">        <span class="attribute">flex-grow </span>: <span class="number">1</span>;</div><div class="line">    &#125;        </div><div class="line">    <span class="selector-class">.grow2</span>&#123;</div><div class="line">        <span class="attribute">flex-grow </span>: <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner grow1"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner grow2"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner grow0"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span>6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/flex-grow.jpg?raw=true" alt="flex-grow"><br>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间,总之，设置固定的px之后，其他设置flex-grow的平分剩余的空间。</p>
+<h3 id="3-flex-shrink属性"><a href="#3-flex-shrink属性" class="headerlink" title="3.flex-shrink属性"></a>3.flex-shrink属性</h3><p>&emsp;&emsp;定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">    <span class="selector-id">#container</span>&#123;</div><div class="line">        <span class="attribute">display</span>: flex;</div><div class="line">        <span class="attribute">flex-direction</span>: row;</div><div class="line">        <span class="attribute">width</span>:<span class="number">500px</span>;</div><div class="line">        <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">        <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-class">.inner</span>&#123;</div><div class="line">        <span class="attribute">width</span>:<span class="number">200px</span>;</div><div class="line">        <span class="attribute">height</span>:<span class="number">50px</span>; </div><div class="line">        <span class="attribute">background</span>:orange;</div><div class="line">        <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#fff</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-class">.shrink0</span>&#123;</div><div class="line">        <span class="attribute">flex-shrink </span>: <span class="number">0</span>;</div><div class="line">    &#125;        </div><div class="line">    <span class="selector-class">.shrink1</span>&#123;</div><div class="line">        <span class="attribute">flex-shrink </span>: <span class="number">1</span>;</div><div class="line">    &#125; </div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner shrink0"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner shrink1"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner "</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span>6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/flex-shrink.jpg?raw=true" alt="flex-shrink"><br>如上图所示，所有子元素都为200px，明显超过了所定义的父容器大小，但是设置<code>flex-direction: row;</code>的时候，每个元素都默认平均非配空间，当flex-shrink为0的时候，元素就不会缩小。</p>
+<h3 id="4-flex-basis"><a href="#4-flex-basis" class="headerlink" title="4.flex-basis"></a>4.flex-basis</h3><p>&emsp;&emsp;定义了在分配多余空间之前，项目占据的主轴空间（main size）,浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#container</span>&#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.inner</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">50px</span>; </div><div class="line">    <span class="attribute">background</span>:orange;</div><div class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#fff</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.basis</span>&#123;</div><div class="line">    <span class="attribute">flex-basis</span>:<span class="number">200px</span>; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/flex-basis.jpg?raw=true" alt="flex-basis"></p>
+<h3 id="5-flex属性"><a href="#5-flex属性" class="headerlink" title="5.flex属性"></a>5.flex属性</h3><p>&emsp;&emsp;flex属性是flex-grow,flex-shrink和flex-basie的简写，默认值为0 1 auto。建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
+<h3 id="6-align-self属性"><a href="#6-align-self属性" class="headerlink" title="6.align-self属性"></a>6.align-self属性</h3><p>&emsp;&emsp;align-self属性允许单个项目有与其他项目不同的对齐方式，可以覆盖align-items属性。默认为auto，表示继承父元素的align-items属性，如果没有父元素，等同于stretch。该属性可能取6个值，除了auto，其他都与align-items属性完全一致。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#container</span>&#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line">    <span class="attribute">align-items</span>: flex-start;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.inner</span>&#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">50px</span>; </div><div class="line">    <span class="attribute">background</span>:orange;</div><div class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#fff</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.item</span>&#123;</div><div class="line">        <span class="comment">/* align-self: auto | flex-start | flex-end | center | baseline | stretch; */</span></div><div class="line">        <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">        <span class="attribute">align-self </span>: flex-end;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="https://github.com/flyingpig2016/reactjs-demo/blob/master/01flex/img/align-self.jpg?raw=true" alt="align-self"></p>
+<p>github源码地址：<a href="https://github.com/flyingpig2016/reactjs-demo/tree/master/01flex" target="_blank" rel="external">flex布局</a></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipy.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/10/js-touch事件及gesture-手势-事件详解/">展开全文 >></a>
-        </p>
-      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.iambangbang.club/2017/07/24/flex布局/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/20/compile函数与link函数用法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">compile函数与link函数用法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
 
   
+
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
-    </nav>
+
+
+  
+    <section id="comments">    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper" sid="flex布局"></div>
+      <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+      <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",    
+        productKey: "cc67d8b92f2e42a1af6e43e415055393",
+        target: "cloud-tie-wrapper"   
+      };
+      var yunManualLoad = true;
+      Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+      </script>
+    </section>
   
 
 
@@ -427,8 +525,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
