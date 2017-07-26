@@ -194,6 +194,74 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js-touch事件及gesture-手势-事件详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/10/js-touch事件及gesture-手势-事件详解/">js-touch事件及gesture-手势-事件详解</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/10/js-touch事件及gesture-手势-事件详解/" class="archive-article-date">
+  	<time datetime="2017-07-10T05:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
+</a>
+        
+      </header>
+    
+            <!-- 目录内容 -->
+             
+        <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一：touch事件分类？"><a href="#一：touch事件分类？" class="headerlink" title="一：touch事件分类？"></a>一：touch事件分类？</h3><ol>
+<li>touchstart：当手指触摸屏幕时触发。不管有多少个手指放在了屏幕上，只要再触摸一下屏幕就会触发。在此，我用小米的google浏览器做了一个实验，添加一个计数器，用来查看屏幕上手指触摸的次数，代码如下：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line">	<span class="built_in">document</span>.addEventListener(<span class="string">'touchstart'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">		myDiv.innerHTML = <span class="string">'触屏的次数：'</span>+ i++;</div><div class="line">	&#125;,<span class="literal">false</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2.touchmove：当手指在屏幕上滑动的时候触发该是事件，在这期间可以通过event.preventDefault()来阻止滚动；<br>
+        
+          <a class="article-more-a" href="/2017/07/10/js-touch事件及gesture-手势-事件详解/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/10/js-touch事件及gesture-手势-事件详解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-js工厂模式、构造函数以及他们创建对象的优缺点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -328,72 +396,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-javascript继承方式——原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/javascript继承方式——原型链/">javascript继承方式——原型链</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/10/javascript继承方式——原型链/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:37:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        
-      </header>
-    
-            <!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>JavaScript中依靠原型链的继承方式
-</code></pre><hr>
-<h3 id="开门见山，ECMAScript中实现继承主要是靠原型链来实现的。"><a href="#开门见山，ECMAScript中实现继承主要是靠原型链来实现的。" class="headerlink" title="开门见山，ECMAScript中实现继承主要是靠原型链来实现的。**"></a>开门见山，ECMAScript中实现继承主要是靠原型链来实现的。**</h3><h3 id="一：什么是原型链呢？"><a href="#一：什么是原型链呢？" class="headerlink" title="一：什么是原型链呢？**"></a>一：什么是原型链呢？**</h3><p>&emsp;&emsp;其基本思想是利用原型，让一个引用类型继承另一个引用类型的属性和方法。根据上一节<a href="http://blog.csdn.net/flyingpig2016/article/details/53048394" target="_blank" rel="external">原型对象</a>：我们知道，每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。那么如果我们让原型对象等于另一个类型的实例，结果会怎样呢？很显然，此时的原型对象将包含一个指向另一个原型的指针，相应的，另一个原型中也包含一个指向另一个构造函数的指针。假如另一个原型又是另一个类型的实例，那么上述关系层层递进，就<strong>构成了实例和原型的链条，这就是原型链</strong>。以下就是原型链形成的基本模式：<br>
-        
-          <a class="article-more-a" href="/2017/07/10/javascript继承方式——原型链/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/10/javascript继承方式——原型链/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -492,6 +494,10 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">react-native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">notes</a>
               </li>
              
@@ -500,11 +506,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端自动化工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端自动化工具</a>
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">

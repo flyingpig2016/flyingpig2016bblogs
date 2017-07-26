@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//www.iambangbang.club">
-  <title>js工厂模式、构造函数以及他们创建对象的优缺点 | flyingpig</title>
+  <title>Tag: react-native | flyingpig</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="工厂模式和构造函数的区别 学习JavaScript有一段时间了，但是随着工作的进展，我发现，JavaScript绝对不是写一下简单效果那么肤浅，是时候完全，透彻地理解他的精髓了。  好了，让俺老猪带你装逼带你飞吧！ 一：为什么使用工厂模式和构造函数？**&amp;emsp;&amp;emsp;虽然Object构造函数或者字面量(var person={})可以创建单个对象，但是，他有一个明显的缺点，那就是：重复造">
-<meta name="keywords" content="javascript高级程序设计">
-<meta property="og:type" content="article">
-<meta property="og:title" content="js工厂模式、构造函数以及他们创建对象的优缺点">
-<meta property="og:url" content="//www.iambangbang.club/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/index.html">
+  <meta name="description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
+<meta name="keywords" content="hexo,yilia,前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="og:type" content="website">
+<meta property="og:title" content="flyingpig">
+<meta property="og:url" content="//www.iambangbang.club/tags/react-native/index.html">
 <meta property="og:site_name" content="flyingpig">
-<meta property="og:description" content="工厂模式和构造函数的区别 学习JavaScript有一段时间了，但是随着工作的进展，我发现，JavaScript绝对不是写一下简单效果那么肤浅，是时候完全，透彻地理解他的精髓了。  好了，让俺老猪带你装逼带你飞吧！ 一：为什么使用工厂模式和构造函数？**&amp;emsp;&amp;emsp;虽然Object构造函数或者字面量(var person={})可以创建单个对象，但是，他有一个明显的缺点，那就是：重复造">
-<meta property="og:updated_time" content="2017-07-14T10:55:46.997Z">
+<meta property="og:description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js工厂模式、构造函数以及他们创建对象的优缺点">
-<meta name="twitter:description" content="工厂模式和构造函数的区别 学习JavaScript有一段时间了，但是随着工作的进展，我发现，JavaScript绝对不是写一下简单效果那么肤浅，是时候完全，透彻地理解他的精髓了。  好了，让俺老猪带你装逼带你飞吧！ 一：为什么使用工厂模式和构造函数？**&amp;emsp;&amp;emsp;虽然Object构造函数或者字面量(var person={})可以创建单个对象，但是，他有一个明显的缺点，那就是：重复造">
+<meta name="twitter:title" content="flyingpig">
+<meta name="twitter:description" content="擅长各项前端技能，研究移动端开发与前端性能。非专业视觉设计师。此为博客一枚。">
   
   
     <link rel="icon" href="/favicon.jpg">
@@ -193,233 +192,60 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js工厂模式、构造函数以及他们创建对象的优缺点" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      js工厂模式、构造函数以及他们创建对象的优缺点
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/07/26/React-Native加载图片详解/" class="archive-article-date">
+  	<time datetime="2017-07-26T00:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-26</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/26/React-Native加载图片详解/">React Native加载图片详解</a>
     </h1>
   
 
-        
-        <a href="/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:44:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
-</a>
-        
-      </header>
-    
-            <!-- 目录内容 -->
-        
-            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
-            <span class="btn-bg"></span>
-            <span class="btn-text">文章导航</span>
-            </p>
-            <div id="toc-article" class="toc-article">
-                <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
-                <strong class="toc-title">文章目录</strong>
-                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#工厂模式和构造函数的区别"><span class="toc-number">1.</span> <span class="toc-text">工厂模式和构造函数的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一：为什么使用工厂模式和构造函数？"><span class="toc-number">2.</span> <span class="toc-text">一：为什么使用工厂模式和构造函数？**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二：什么是工厂模式？它有什么优缺点？"><span class="toc-number">3.</span> <span class="toc-text">二：什么是工厂模式？它有什么优缺点？**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三：什么是构造函数模式，它和工厂模式比较有哪些好处？它自身又有那些缺点？"><span class="toc-number">4.</span> <span class="toc-text">三：什么是构造函数模式，它和工厂模式比较有哪些好处？它自身又有那些缺点？**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-构造函数和普通函数的区别在哪？"><span class="toc-number">5.</span> <span class="toc-text">四:构造函数和普通函数的区别在哪？**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五：构造函数有哪些不足之处？"><span class="toc-number">6.</span> <span class="toc-text">五：构造函数有哪些不足之处？**</span></a></li></ol>
-           </div>
-           <script type="text/javascript">
-            function showToc(){
-                var toc_article = document.getElementById("toc-article");
-                var show_toc_btn = document.getElementById("show-toc-btn");
-                toc_article.setAttribute("style","display:block");
-                show_toc_btn.setAttribute("style","display:none");
-                };
-            function showBtn(){
-                var toc_article = document.getElementById("toc-article");
-                var show_toc_btn = document.getElementById("show-toc-btn");
-                toc_article.setAttribute("style","display:none");
-                show_toc_btn.setAttribute("style","display:block");
-                };
-           </script>
-             
-        <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="工厂模式和构造函数的区别"><a href="#工厂模式和构造函数的区别" class="headerlink" title="工厂模式和构造函数的区别"></a>工厂模式和构造函数的区别</h3><blockquote>
-<p>学习JavaScript有一段时间了，但是随着工作的进展，我发现，JavaScript绝对不是写一下简单效果那么肤浅，是时候完全，透彻地理解他的精髓了。</p>
-</blockquote>
-<p>好了，让俺老猪带你装逼带你飞吧！</p>
-<h3 id="一：为什么使用工厂模式和构造函数？"><a href="#一：为什么使用工厂模式和构造函数？" class="headerlink" title="一：为什么使用工厂模式和构造函数？**"></a>一：为什么使用工厂模式和构造函数？**</h3><p>&emsp;&emsp;虽然Object构造函数或者字面量(var person={})可以创建单个对象，但是，他有一个明显的缺点，那就是：重复造轮子，产生大量的重复性代码，为了解决这个问题，我们就开始使用工厂模式和构造函数模式。</p>
-<h3 id="二：什么是工厂模式？它有什么优缺点？"><a href="#二：什么是工厂模式？它有什么优缺点？" class="headerlink" title="二：什么是工厂模式？它有什么优缺点？**"></a>二：什么是工厂模式？它有什么优缺点？**</h3><p>&emsp;&emsp;1.顾名思义，工厂模式就是像工厂一样来创建对象。但这样的解释似乎有点欠妥，高大上一点，工厂模式其实是软件领域中一种广为人知的一种设计模式，这种模式抽象了创建具体对象的过程。开发人员发明了一种函数，用函数来大量创建对象的方法；<br><a id="more"></a><br>2.工厂模式例子如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age,say</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">	obj1.name = name;</div><div class="line">	obj.age = age;</div><div class="line">	obj.say = say;</div><div class="line">	obj.should = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.say);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> obj;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person1 = createPerson(<span class="string">'bangbang'</span>,<span class="number">18</span>,<span class="string">'脚踏实地才能壮志凌云！'</span>);</div><div class="line"><span class="keyword">var</span> person2 = createPerson(<span class="string">'yanniu'</span>,<span class="number">18</span>,<span class="string">'我相信你可以！'</span>);</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;但是工厂模式可以创建多个相似的对象，但是却没有解决对象的识别问题(不知道这个对象的类型)。相信这句话还需要探究，不要急，接下来看那看构造函数模式，你就会理解。</p>
-<h3 id="三：什么是构造函数模式，它和工厂模式比较有哪些好处？它自身又有那些缺点？"><a href="#三：什么是构造函数模式，它和工厂模式比较有哪些好处？它自身又有那些缺点？" class="headerlink" title="三：什么是构造函数模式，它和工厂模式比较有哪些好处？它自身又有那些缺点？**"></a>三：什么是构造函数模式，它和工厂模式比较有哪些好处？它自身又有那些缺点？**</h3><p>&emsp;&emsp;1.实例如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name, age, say</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.say = say;</div><div class="line">	<span class="keyword">this</span>.should = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>(<span class="keyword">this</span>.say);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> CreatePerson(<span class="string">'bangbang'</span>,<span class="number">18</span>,<span class="string">'修身，齐家，天下很太平'</span>);</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> CreatePerson(<span class="string">'yanniu'</span>,<span class="number">18</span>,<span class="string">'吃地沟油的命，操中南海的心'</span>);</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;这个例子中，CreatePerson()函数取代了createPerson()函数；睁大你的两个招子，第二个CreatePerson()明显是开头大写，这是构造函数的惯例，为了区分和普通函数的区别，因为构造函数也是函数，只不过可以创建对象而已。和工厂模式不同之处看最后一点，不要着急，先自己感悟一下，先说出来就没有味道了，嘿嘿！<br>2.要创建CreatePerson()的新实例，必须使用new，即和使用var person1  = new Object()差不多，实际上会经历一些步骤：</p>
-<ul>
-<li>创建一个新的对象；</li>
-<li>将构造函数作用域赋给新的对象（即this指向新对象）；</li>
-<li>执行构造函数里面的代码；</li>
-<li>返回新的对象。<br>但是创建的person1和person2都有一个constructor(构造函数)属性，该属性指向CreatePerson,代码如下：<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(person1.constructor == CreatePerson());<span class="comment">//true</span></div><div class="line">console.<span class="built_in">log</span>(person2.constructor == CreatePerson());<span class="comment">//true</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>&emsp;&emsp;不过用instanceof操作符来检测对象的类型还是更可靠地，因为instanceof是用来专门比较一个对象是否为某个构造函数的实例。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(person1 <span class="keyword">instanceof</span> <span class="built_in">Object</span>); 	 <span class="comment">//true;</span></div><div class="line"><span class="built_in">console</span>.log(person1 <span class="keyword">instanceof</span> CreatePerson);<span class="comment">//true;</span></div><div class="line"><span class="built_in">console</span>.log(person2 <span class="keyword">instanceof</span> <span class="built_in">Object</span>);      <span class="comment">//true;</span></div><div class="line"><span class="built_in">console</span>.log(person2 <span class="keyword">instanceof</span> CreatePerson);<span class="comment">//true;</span></div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;创建自定义的构造函数意味着将来可以将他的实例标识为一种特定的类型，这就是构造函数比工厂模式强的地方，因为它只道自己从哪里来，通过谁产生的，在回顾上面（一）我所写的，你就会很明白了。</p>
-<h3 id="四-构造函数和普通函数的区别在哪？"><a href="#四-构造函数和普通函数的区别在哪？" class="headerlink" title="四:构造函数和普通函数的区别在哪？**"></a>四:构造函数和普通函数的区别在哪？**</h3><p>&emsp;&emsp;1.构造函数和普通函数唯一的区别是他们的调用方式不同。<br>&emsp;&emsp;2.任何函数只要通过new来调用，那它就可以作为构造函数，而任何函数，如果不通过new操作符来调用，他就是普通的函数。<br>&emsp;&emsp;例子如下：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//当做构造函数来使用</span></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> CreatePerson(<span class="string">'bangbang'</span>,<span class="number">18</span>,<span class="string">'修身，齐家，天下很太平'</span>);</div><div class="line">person1.should(); <span class="comment">//'修身，齐家，天下很太平'</span></div><div class="line"></div><div class="line"><span class="comment">//构造函数当做普通函数使用</span></div><div class="line">CreatePerson(<span class="string">'bangbang'</span>,<span class="number">18</span>,<span class="string">'修身，齐家，天下很太平'</span>)</div><div class="line"><span class="built_in">window</span>.should();<span class="comment">//'修身，齐家，天下很太平'</span></div><div class="line"><span class="comment">//在另一个对象的作用域中调用（这个需要以后的继承探讨）</span></div><div class="line"><span class="keyword">var</span>  person3 = <span class="keyword">new</span> <span class="built_in">Object</span>():</div><div class="line">CreatePerson.call(person3,<span class="string">'qiqi'</span>,<span class="number">18</span>,<span class="string">'我是一个护士'</span>);<span class="comment">//person3就有了CreatePerson类的所有的属性和should方法</span></div></pre></td></tr></table></figure></p>
-<h3 id="五：构造函数有哪些不足之处？"><a href="#五：构造函数有哪些不足之处？" class="headerlink" title="五：构造函数有哪些不足之处？**"></a>五：构造函数有哪些不足之处？**</h3><p>&emsp;&emsp;1.构造函数最明显的缺点就是，每个方法都要在每个实例上重新创建一遍。在前面的例子中，person1和person2都有一个should的方法，但是两个方法不是同一个Function的实例，因此每定义一个函数(也就是实例化一个对象),从逻辑上构造函数还可以这样定义：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name,age,say</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.say = say;</div><div class="line">	<span class="keyword">this</span>.should = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'console.log(this.say)'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;由上面可以得出这种方式创建函数实例化出的对象都包含一个不同的Function实例，说的更通俗点：这种方式创建函数，会导致不同的作用域链和标识符解析，但是创建Function的新实例的机制仍然是相同的。所以，不同实例上的同名函数是不相等的，证明如下：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(person1.should == person2.should);<span class="comment">//false</span></div></pre></td></tr></table></figure></p>
-<p>2.因此以上的写法可以这样简化：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name,age,say</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.say = say;</div><div class="line">	<span class="keyword">this</span>.should = should;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">should</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.say);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> CreatePerson(<span class="string">'bangbang'</span>,<span class="number">18</span>,<span class="string">'乐观'</span>);</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> CreatePerson(<span class="string">'yanniu'</span>,<span class="number">18</span>,<span class="string">'切记盲目乐观'</span>);</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;我们把函数放在构造函数的外面作为全局函数，因此person1和person2对象就共享了在全局作用域中定义的同一个say函数。但是问题又来了：<strong>在全局作用域中定义的函数实际上只能被某个对象调用，这让该全局作用域有点名不副实。</strong>，更让然无法接受的是：如果对象需要定义很多方法，那么就要定义很多个全局函数，那么我们这个自定义的引用类型就丝毫没有封装性可言了。因此我们需要另一种高大上的模式，——原型模式（prototype）。</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/alipy.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/weixin.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">react-native</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.iambangbang.club/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/07/10/js-touch事件及gesture-手势-事件详解/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          js-touch事件及gesture-手势-事件详解
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/07/10/深入理解prototyp/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">深入理解prototyp</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
+    </div></section>
   
 
-
-  
-
-
-  
-    <section id="comments">    
-      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper" sid="js工厂模式、构造函数以及他们创建对象的优缺点"></div>
-      <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-      <script>
-      var cloudTieConfig = {
-        url: document.location.href, 
-        sourceId: "",    
-        productKey: "cc67d8b92f2e42a1af6e43e415055393",
-        target: "cloud-tie-wrapper"   
-      };
-      var yunManualLoad = true;
-      Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
-      </script>
-    </section>
-  
+    
 
 
           </div>
@@ -443,9 +269,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

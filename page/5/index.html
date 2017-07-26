@@ -194,6 +194,72 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-javascript继承方式——原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/10/javascript继承方式——原型链/">javascript继承方式——原型链</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/10/javascript继承方式——原型链/" class="archive-article-date">
+  	<time datetime="2017-07-10T05:37:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
+</a>
+        
+      </header>
+    
+            <!-- 目录内容 -->
+             
+        <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>JavaScript中依靠原型链的继承方式
+</code></pre><hr>
+<h3 id="开门见山，ECMAScript中实现继承主要是靠原型链来实现的。"><a href="#开门见山，ECMAScript中实现继承主要是靠原型链来实现的。" class="headerlink" title="开门见山，ECMAScript中实现继承主要是靠原型链来实现的。**"></a>开门见山，ECMAScript中实现继承主要是靠原型链来实现的。**</h3><h3 id="一：什么是原型链呢？"><a href="#一：什么是原型链呢？" class="headerlink" title="一：什么是原型链呢？**"></a>一：什么是原型链呢？**</h3><p>&emsp;&emsp;其基本思想是利用原型，让一个引用类型继承另一个引用类型的属性和方法。根据上一节<a href="http://blog.csdn.net/flyingpig2016/article/details/53048394" target="_blank" rel="external">原型对象</a>：我们知道，每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。那么如果我们让原型对象等于另一个类型的实例，结果会怎样呢？很显然，此时的原型对象将包含一个指向另一个原型的指针，相应的，另一个原型中也包含一个指向另一个构造函数的指针。假如另一个原型又是另一个类型的实例，那么上述关系层层递进，就<strong>构成了实例和原型的链条，这就是原型链</strong>。以下就是原型链形成的基本模式：<br>
+        
+          <a class="article-more-a" href="/2017/07/10/javascript继承方式——原型链/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/10/javascript继承方式——原型链/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-详解callee和caller-apply-和call的用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -325,70 +391,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-mongodb常用命令学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/02/mongodb常用命令学习/">mongodb常用命令学习</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/02/mongodb常用命令学习/" class="archive-article-date">
-  	<time datetime="2017-07-02T08:23:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-02</time>
-</a>
-        
-      </header>
-    
-            <!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="mongoDB常用命令"><a href="#mongoDB常用命令" class="headerlink" title="mongoDB常用命令"></a>mongoDB常用命令</h2><h3 id="1-展示数据库：show-dbs；"><a href="#1-展示数据库：show-dbs；" class="headerlink" title="1. 展示数据库：show dbs；"></a><strong>1. 展示数据库：</strong><code>show dbs</code>；</h3><h3 id="2-显示当前数据库对象或集合：db"><a href="#2-显示当前数据库对象或集合：db" class="headerlink" title="2. 显示当前数据库对象或集合：db;"></a><strong>2. 显示当前数据库对象或集合：</strong><code>db</code>;</h3><h3 id="3-连接到一个指定的数据库-use"><a href="#3-连接到一个指定的数据库-use" class="headerlink" title="3. 连接到一个指定的数据库:  use;"></a><strong>3. 连接到一个指定的数据库:</strong>  <code>use</code>;</h3><h3 id="4-关系型数据库和mongodb的术语："><a href="#4-关系型数据库和mongodb的术语：" class="headerlink" title="4. 关系型数据库和mongodb的术语："></a><strong>4. 关系型数据库和mongodb的术语：</strong></h3><p><img src="http://img.blog.csdn.net/20170610182030359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmx5aW5ncGlnMjAxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>
-        
-          <a class="article-more-a" href="/2017/07/02/mongodb常用命令学习/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MongoDB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/02/mongodb常用命令学习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -487,6 +489,10 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">react-native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">notes</a>
               </li>
              
@@ -495,11 +501,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端自动化工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端自动化工具</a>
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">

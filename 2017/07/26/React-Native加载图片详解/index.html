@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//www.iambangbang.club">
-  <title>js工厂模式、构造函数以及他们创建对象的优缺点 | flyingpig</title>
+  <title>React Native加载图片详解 | flyingpig</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="工厂模式和构造函数的区别 学习JavaScript有一段时间了，但是随着工作的进展，我发现，JavaScript绝对不是写一下简单效果那么肤浅，是时候完全，透彻地理解他的精髓了。  好了，让俺老猪带你装逼带你飞吧！ 一：为什么使用工厂模式和构造函数？**&amp;emsp;&amp;emsp;虽然Object构造函数或者字面量(var person={})可以创建单个对象，但是，他有一个明显的缺点，那就是：重复造">
-<meta name="keywords" content="javascript高级程序设计">
+  <meta name="description" content="一：Image组件的基本用法1.1从当前项目(即本地)中加载图片1234&amp;lt;View style=&amp;#123;styles3.container&amp;#125;&amp;gt;	&amp;lt;Text&amp;gt;加载本地图片&amp;lt;/Text&amp;gt;	&amp;lt;Image source=&amp;#123;require(&apos;./img/1.jpg&apos;)&amp;#125; style=&amp;#123;styles3.img1&amp;#125;">
+<meta name="keywords" content="react-native">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js工厂模式、构造函数以及他们创建对象的优缺点">
-<meta property="og:url" content="//www.iambangbang.club/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/index.html">
+<meta property="og:title" content="React Native加载图片详解">
+<meta property="og:url" content="//www.iambangbang.club/2017/07/26/React-Native加载图片详解/index.html">
 <meta property="og:site_name" content="flyingpig">
-<meta property="og:description" content="工厂模式和构造函数的区别 学习JavaScript有一段时间了，但是随着工作的进展，我发现，JavaScript绝对不是写一下简单效果那么肤浅，是时候完全，透彻地理解他的精髓了。  好了，让俺老猪带你装逼带你飞吧！ 一：为什么使用工厂模式和构造函数？**&amp;emsp;&amp;emsp;虽然Object构造函数或者字面量(var person={})可以创建单个对象，但是，他有一个明显的缺点，那就是：重复造">
-<meta property="og:updated_time" content="2017-07-14T10:55:46.997Z">
+<meta property="og:description" content="一：Image组件的基本用法1.1从当前项目(即本地)中加载图片1234&amp;lt;View style=&amp;#123;styles3.container&amp;#125;&amp;gt;	&amp;lt;Text&amp;gt;加载本地图片&amp;lt;/Text&amp;gt;	&amp;lt;Image source=&amp;#123;require(&apos;./img/1.jpg&apos;)&amp;#125; style=&amp;#123;styles3.img1&amp;#125;">
+<meta property="og:image" content="http://img.blog.csdn.net/20170725171732201?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmx5aW5ncGlnMjAxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-07-26T00:54:39.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js工厂模式、构造函数以及他们创建对象的优缺点">
-<meta name="twitter:description" content="工厂模式和构造函数的区别 学习JavaScript有一段时间了，但是随着工作的进展，我发现，JavaScript绝对不是写一下简单效果那么肤浅，是时候完全，透彻地理解他的精髓了。  好了，让俺老猪带你装逼带你飞吧！ 一：为什么使用工厂模式和构造函数？**&amp;emsp;&amp;emsp;虽然Object构造函数或者字面量(var person={})可以创建单个对象，但是，他有一个明显的缺点，那就是：重复造">
+<meta name="twitter:title" content="React Native加载图片详解">
+<meta name="twitter:description" content="一：Image组件的基本用法1.1从当前项目(即本地)中加载图片1234&amp;lt;View style=&amp;#123;styles3.container&amp;#125;&amp;gt;	&amp;lt;Text&amp;gt;加载本地图片&amp;lt;/Text&amp;gt;	&amp;lt;Image source=&amp;#123;require(&apos;./img/1.jpg&apos;)&amp;#125; style=&amp;#123;styles3.img1&amp;#125;">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170725171732201?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmx5aW5ncGlnMjAxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
   
     <link rel="icon" href="/favicon.jpg">
@@ -193,20 +195,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js工厂模式、构造函数以及他们创建对象的优缺点" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-React-Native加载图片详解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      js工厂模式、构造函数以及他们创建对象的优缺点
+      React Native加载图片详解
     </h1>
   
 
         
-        <a href="/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/" class="archive-article-date">
-  	<time datetime="2017-07-10T05:44:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-10</time>
+        <a href="/2017/07/26/React-Native加载图片详解/" class="archive-article-date">
+  	<time datetime="2017-07-26T00:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-26</time>
 </a>
         
       </header>
@@ -220,7 +222,7 @@ var _hmt = _hmt || [];
             <div id="toc-article" class="toc-article">
                 <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
                 <strong class="toc-title">文章目录</strong>
-                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#工厂模式和构造函数的区别"><span class="toc-number">1.</span> <span class="toc-text">工厂模式和构造函数的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一：为什么使用工厂模式和构造函数？"><span class="toc-number">2.</span> <span class="toc-text">一：为什么使用工厂模式和构造函数？**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二：什么是工厂模式？它有什么优缺点？"><span class="toc-number">3.</span> <span class="toc-text">二：什么是工厂模式？它有什么优缺点？**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三：什么是构造函数模式，它和工厂模式比较有哪些好处？它自身又有那些缺点？"><span class="toc-number">4.</span> <span class="toc-text">三：什么是构造函数模式，它和工厂模式比较有哪些好处？它自身又有那些缺点？**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-构造函数和普通函数的区别在哪？"><span class="toc-number">5.</span> <span class="toc-text">四:构造函数和普通函数的区别在哪？**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五：构造函数有哪些不足之处？"><span class="toc-number">6.</span> <span class="toc-text">五：构造函数有哪些不足之处？**</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一：Image组件的基本用法"><span class="toc-number">1.</span> <span class="toc-text">一：Image组件的基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1从当前项目-即本地-中加载图片"><span class="toc-number">1.1.</span> <span class="toc-text">1.1从当前项目(即本地)中加载图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2从APP中的图片加载-即android或ios目录里面的图片"><span class="toc-number">1.2.</span> <span class="toc-text">1.2从APP中的图片加载(即android或ios目录里面的图片)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3从网络中加载图片"><span class="toc-number">1.3.</span> <span class="toc-text">1.3从网络中加载图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-设置图片为背景"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 设置图片为背景</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二：Image组件的常用属性"><span class="toc-number">2.</span> <span class="toc-text">二：Image组件的常用属性</span></a></li></ol>
            </div>
            <script type="text/javascript">
             function showToc(){
@@ -240,29 +242,41 @@ var _hmt = _hmt || [];
         <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="工厂模式和构造函数的区别"><a href="#工厂模式和构造函数的区别" class="headerlink" title="工厂模式和构造函数的区别"></a>工厂模式和构造函数的区别</h3><blockquote>
-<p>学习JavaScript有一段时间了，但是随着工作的进展，我发现，JavaScript绝对不是写一下简单效果那么肤浅，是时候完全，透彻地理解他的精髓了。</p>
-</blockquote>
-<p>好了，让俺老猪带你装逼带你飞吧！</p>
-<h3 id="一：为什么使用工厂模式和构造函数？"><a href="#一：为什么使用工厂模式和构造函数？" class="headerlink" title="一：为什么使用工厂模式和构造函数？**"></a>一：为什么使用工厂模式和构造函数？**</h3><p>&emsp;&emsp;虽然Object构造函数或者字面量(var person={})可以创建单个对象，但是，他有一个明显的缺点，那就是：重复造轮子，产生大量的重复性代码，为了解决这个问题，我们就开始使用工厂模式和构造函数模式。</p>
-<h3 id="二：什么是工厂模式？它有什么优缺点？"><a href="#二：什么是工厂模式？它有什么优缺点？" class="headerlink" title="二：什么是工厂模式？它有什么优缺点？**"></a>二：什么是工厂模式？它有什么优缺点？**</h3><p>&emsp;&emsp;1.顾名思义，工厂模式就是像工厂一样来创建对象。但这样的解释似乎有点欠妥，高大上一点，工厂模式其实是软件领域中一种广为人知的一种设计模式，这种模式抽象了创建具体对象的过程。开发人员发明了一种函数，用函数来大量创建对象的方法；<br><a id="more"></a><br>2.工厂模式例子如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age,say</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">	obj1.name = name;</div><div class="line">	obj.age = age;</div><div class="line">	obj.say = say;</div><div class="line">	obj.should = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.say);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> obj;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person1 = createPerson(<span class="string">'bangbang'</span>,<span class="number">18</span>,<span class="string">'脚踏实地才能壮志凌云！'</span>);</div><div class="line"><span class="keyword">var</span> person2 = createPerson(<span class="string">'yanniu'</span>,<span class="number">18</span>,<span class="string">'我相信你可以！'</span>);</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;但是工厂模式可以创建多个相似的对象，但是却没有解决对象的识别问题(不知道这个对象的类型)。相信这句话还需要探究，不要急，接下来看那看构造函数模式，你就会理解。</p>
-<h3 id="三：什么是构造函数模式，它和工厂模式比较有哪些好处？它自身又有那些缺点？"><a href="#三：什么是构造函数模式，它和工厂模式比较有哪些好处？它自身又有那些缺点？" class="headerlink" title="三：什么是构造函数模式，它和工厂模式比较有哪些好处？它自身又有那些缺点？**"></a>三：什么是构造函数模式，它和工厂模式比较有哪些好处？它自身又有那些缺点？**</h3><p>&emsp;&emsp;1.实例如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name, age, say</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.say = say;</div><div class="line">	<span class="keyword">this</span>.should = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>(<span class="keyword">this</span>.say);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> CreatePerson(<span class="string">'bangbang'</span>,<span class="number">18</span>,<span class="string">'修身，齐家，天下很太平'</span>);</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> CreatePerson(<span class="string">'yanniu'</span>,<span class="number">18</span>,<span class="string">'吃地沟油的命，操中南海的心'</span>);</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;这个例子中，CreatePerson()函数取代了createPerson()函数；睁大你的两个招子，第二个CreatePerson()明显是开头大写，这是构造函数的惯例，为了区分和普通函数的区别，因为构造函数也是函数，只不过可以创建对象而已。和工厂模式不同之处看最后一点，不要着急，先自己感悟一下，先说出来就没有味道了，嘿嘿！<br>2.要创建CreatePerson()的新实例，必须使用new，即和使用var person1  = new Object()差不多，实际上会经历一些步骤：</p>
+        <h3 id="一：Image组件的基本用法"><a href="#一：Image组件的基本用法" class="headerlink" title="一：Image组件的基本用法"></a>一：Image组件的基本用法</h3><h4 id="1-1从当前项目-即本地-中加载图片"><a href="#1-1从当前项目-即本地-中加载图片" class="headerlink" title="1.1从当前项目(即本地)中加载图片"></a>1.1从当前项目(即本地)中加载图片</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;styles3.container&#125;</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">Text</span>&gt;</span>加载本地图片<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;require(</span>'<span class="attr">.</span>/<span class="attr">img</span>/<span class="attr">1.jpg</span>')&#125; <span class="attr">style</span>=<span class="string">&#123;styles3.img1&#125;</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">View</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这时候的图片可以放在根目录，也就是和index.andorid.js或者index.ios.js一个目录。该图片资源文件的查找和JS模块相似，该会根据填写的图片路径相对于当前的js文件路径进行搜索，此外，React Naive的Packager会根据平台选择相应的文件，例如:my_icon.ios.png和my_icon.android.png两个文件(命名方式android或者ios)，会分别根据android或者ios平台选择相应的文件。</p>
+<h4 id="1-2从APP中的图片加载-即android或ios目录里面的图片"><a href="#1-2从APP中的图片加载-即android或ios目录里面的图片" class="headerlink" title="1.2从APP中的图片加载(即android或ios目录里面的图片)"></a>1.2从APP中的图片加载(即android或ios目录里面的图片)</h4><p>&emsp;&emsp;首先我们要了解一件事情,我们应该从哪个目录加载图片：</p>
 <ul>
-<li>创建一个新的对象；</li>
-<li>将构造函数作用域赋给新的对象（即this指向新对象）；</li>
-<li>执行构造函数里面的代码；</li>
-<li>返回新的对象。<br>但是创建的person1和person2都有一个constructor(构造函数)属性，该属性指向CreatePerson,代码如下：<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(person1.constructor == CreatePerson());<span class="comment">//true</span></div><div class="line">console.<span class="built_in">log</span>(person2.constructor == CreatePerson());<span class="comment">//true</span></div></pre></td></tr></table></figure>
+<li>android中，我们在android/app/src/main/res/下创建一个文件夹drawable，然后，我们一定要重新编译一下android后，才能在代码中使用。命名图片的时候必须开头用字母，否则编译不成；</li>
+<li>ios中，我们在目录ios\Hello\Images.xcassets下创建一个img文件夹<br>两者调用的方法都一样.<br>然后我们在两者的文件夹下面都加入qiu.jpg图片，调用方法为：<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;styles3.container&#125;</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;&#123;uri:</span>'<span class="attr">qiu</span>'&#125;&#125; <span class="attr">style</span>=<span class="string">&#123;styles3.img1&#125;</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">View</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>&emsp;&emsp;不过用instanceof操作符来检测对象的类型还是更可靠地，因为instanceof是用来专门比较一个对象是否为某个构造函数的实例。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(person1 <span class="keyword">instanceof</span> <span class="built_in">Object</span>); 	 <span class="comment">//true;</span></div><div class="line"><span class="built_in">console</span>.log(person1 <span class="keyword">instanceof</span> CreatePerson);<span class="comment">//true;</span></div><div class="line"><span class="built_in">console</span>.log(person2 <span class="keyword">instanceof</span> <span class="built_in">Object</span>);      <span class="comment">//true;</span></div><div class="line"><span class="built_in">console</span>.log(person2 <span class="keyword">instanceof</span> CreatePerson);<span class="comment">//true;</span></div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;创建自定义的构造函数意味着将来可以将他的实例标识为一种特定的类型，这就是构造函数比工厂模式强的地方，因为它只道自己从哪里来，通过谁产生的，在回顾上面（一）我所写的，你就会很明白了。</p>
-<h3 id="四-构造函数和普通函数的区别在哪？"><a href="#四-构造函数和普通函数的区别在哪？" class="headerlink" title="四:构造函数和普通函数的区别在哪？**"></a>四:构造函数和普通函数的区别在哪？**</h3><p>&emsp;&emsp;1.构造函数和普通函数唯一的区别是他们的调用方式不同。<br>&emsp;&emsp;2.任何函数只要通过new来调用，那它就可以作为构造函数，而任何函数，如果不通过new操作符来调用，他就是普通的函数。<br>&emsp;&emsp;例子如下：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//当做构造函数来使用</span></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> CreatePerson(<span class="string">'bangbang'</span>,<span class="number">18</span>,<span class="string">'修身，齐家，天下很太平'</span>);</div><div class="line">person1.should(); <span class="comment">//'修身，齐家，天下很太平'</span></div><div class="line"></div><div class="line"><span class="comment">//构造函数当做普通函数使用</span></div><div class="line">CreatePerson(<span class="string">'bangbang'</span>,<span class="number">18</span>,<span class="string">'修身，齐家，天下很太平'</span>)</div><div class="line"><span class="built_in">window</span>.should();<span class="comment">//'修身，齐家，天下很太平'</span></div><div class="line"><span class="comment">//在另一个对象的作用域中调用（这个需要以后的继承探讨）</span></div><div class="line"><span class="keyword">var</span>  person3 = <span class="keyword">new</span> <span class="built_in">Object</span>():</div><div class="line">CreatePerson.call(person3,<span class="string">'qiqi'</span>,<span class="number">18</span>,<span class="string">'我是一个护士'</span>);<span class="comment">//person3就有了CreatePerson类的所有的属性和should方法</span></div></pre></td></tr></table></figure></p>
-<h3 id="五：构造函数有哪些不足之处？"><a href="#五：构造函数有哪些不足之处？" class="headerlink" title="五：构造函数有哪些不足之处？**"></a>五：构造函数有哪些不足之处？**</h3><p>&emsp;&emsp;1.构造函数最明显的缺点就是，每个方法都要在每个实例上重新创建一遍。在前面的例子中，person1和person2都有一个should的方法，但是两个方法不是同一个Function的实例，因此每定义一个函数(也就是实例化一个对象),从逻辑上构造函数还可以这样定义：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name,age,say</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.say = say;</div><div class="line">	<span class="keyword">this</span>.should = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'console.log(this.say)'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;由上面可以得出这种方式创建函数实例化出的对象都包含一个不同的Function实例，说的更通俗点：这种方式创建函数，会导致不同的作用域链和标识符解析，但是创建Function的新实例的机制仍然是相同的。所以，不同实例上的同名函数是不相等的，证明如下：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.<span class="built_in">log</span>(person1.should == person2.should);<span class="comment">//false</span></div></pre></td></tr></table></figure></p>
-<p>2.因此以上的写法可以这样简化：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreatePerson</span>(<span class="params">name,age,say</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.say = say;</div><div class="line">	<span class="keyword">this</span>.should = should;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">should</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.say);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> CreatePerson(<span class="string">'bangbang'</span>,<span class="number">18</span>,<span class="string">'乐观'</span>);</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> CreatePerson(<span class="string">'yanniu'</span>,<span class="number">18</span>,<span class="string">'切记盲目乐观'</span>);</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;我们把函数放在构造函数的外面作为全局函数，因此person1和person2对象就共享了在全局作用域中定义的同一个say函数。但是问题又来了：<strong>在全局作用域中定义的函数实际上只能被某个对象调用，这让该全局作用域有点名不副实。</strong>，更让然无法接受的是：如果对象需要定义很多方法，那么就要定义很多个全局函数，那么我们这个自定义的引用类型就丝毫没有封装性可言了。因此我们需要另一种高大上的模式，——原型模式（prototype）。</p>
+<a id="more"></a>
+<h4 id="1-3从网络中加载图片"><a href="#1-3从网络中加载图片" class="headerlink" title="1.3从网络中加载图片"></a>1.3从网络中加载图片</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;styles3.container&#125;</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">Text</span>&gt;</span>加载网络图片<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></div><div class="line">	        <span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;&#123;uri:</span>'<span class="attr">https:</span>//<span class="attr">www.baidu.com</span>/<span class="attr">img</span>/<span class="attr">bd_logo1.png</span>'&#125;&#125; <span class="attr">style</span>=<span class="string">&#123;styles3.baidu&#125;</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">View</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="1-4-设置图片为背景"><a href="#1-4-设置图片为背景" class="headerlink" title="1.4 设置图片为背景"></a>1.4 设置图片为背景</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;styles3.container&#125;</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;&#123;uri:</span>'<span class="attr">hhttps:</span>//<span class="attr">www.baidu.com</span>/<span class="attr">img</span>/<span class="attr">bd_logo1.png</span>'&#125;&#125; <span class="attr">style</span>=<span class="string">&#123;styles3.baidu2&#125;</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">Text</span>&gt;</span>设置图片为背景<span class="tag">&lt;/<span class="name">Text</span>&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">Image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">View</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>效果如下图：<br><img src="http://img.blog.csdn.net/20170725171732201?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmx5aW5ncGlnMjAxNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="二：Image组件的常用属性"><a href="#二：Image组件的常用属性" class="headerlink" title="二：Image组件的常用属性"></a>二：Image组件的常用属性</h3><p>2.1 属性方法</p>
+<ul>
+<li>onLayout(function) ：<br> 当Image布局发生改变的，会进行调用该方法，调用的代码为:{nativeEvent: {layout: {x, y, width, height}}}.</li>
+<li>onLoad (function)<br> 当图片加载成功之后，回调该方法</li>
+<li>onLoadEnd (function)<br>当图片加载失败回调该方法，该不会管图片加载成功还是失败</li>
+<li>onLoadStart (fcuntion)<br>当图片开始加载的时候调用该方法</li>
+<li>resizeMode<br>缩放比例,可选参数(‘cover’, ‘contain’, ‘stretch’) 该当图片的尺寸超过布局的尺寸的时候，会根据设置Mode进行缩放或者裁剪图片</li>
+<li>source{uri:string}<br>进行标记图片的引用，该参数可以为一个网络url地址或者一个本地的路径</li>
+</ul>
+<p>2.2 样式风格属性</p>
+<ul>
+<li>FlexBox  支持弹性盒子风格</li>
+<li>Transforms  支持属性动画</li>
+<li>backgroundColor 背景颜色</li>
+<li>borderColor     边框颜色</li>
+<li>borderWidth 边框宽度</li>
+<li>borderRadius  边框圆角</li>
+<li>overflow 设置图片尺寸超过容器可以设置显示或者隐藏(‘visible’,’hidden’)</li>
+<li>tintColor  颜色设置</li>
+<li>opacity 设置不透明度0.0(透明)-1.0(完全不透明)<br>示例css如下：</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">const styles3 = StyleSheet.create(&#123;</div><div class="line">  container:&#123;</div><div class="line">    <span class="attribute">flex</span>:<span class="number">1</span>,</div><div class="line">  &#125;,</div><div class="line">  img1 : &#123;</div><div class="line">    <span class="attribute">width</span>:<span class="string">'100%'</span>,</div><div class="line">    <span class="attribute">flex</span> : <span class="number">1</span>,</div><div class="line">  &#125;,</div><div class="line">  baidu : &#123;</div><div class="line">    <span class="attribute">flex</span> : <span class="number">1</span>,</div><div class="line">  &#125;,</div><div class="line">  baidu2 : &#123;</div><div class="line">    <span class="attribute">flex</span> : <span class="number">1</span>,</div><div class="line">    <span class="attribute">width</span>:<span class="number">100</span>,</div><div class="line">    <span class="attribute">height</span>:<span class="number">100</span>,</div><div class="line">    resizeMode : Image<span class="selector-class">.resizeMode</span><span class="selector-class">.stretch</span>,</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>githiub上index.android.js源码：<a href="https://github.com/flyingpig2016/reactjs-demo/tree/master/02Image" target="_blank" rel="external">image组件用法</a></p>
 
       
 
@@ -307,7 +321,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript高级程序设计</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">react-native</a>
         		</li>
       		
 		</ul>
@@ -363,7 +377,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.iambangbang.club/2017/07/10/js工厂模式、构造函数以及他们创建对象的优缺点/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.iambangbang.club/2017/07/26/React-Native加载图片详解/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -377,18 +391,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/07/10/js-touch事件及gesture-手势-事件详解/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          js-touch事件及gesture-手势-事件详解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/10/深入理解prototyp/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">深入理解prototyp</div>
+    <a href="/2017/07/24/flex布局/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flex布局</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -406,7 +411,7 @@ var _hmt = _hmt || [];
 
   
     <section id="comments">    
-      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper" sid="js工厂模式、构造函数以及他们创建对象的优缺点"></div>
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper" sid="React Native加载图片详解"></div>
       <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
       <script>
       var cloudTieConfig = {
