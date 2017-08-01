@@ -423,9 +423,143 @@ var _hmt = _hmt || [];
 
 
   
+    <article id="post-理解ng中的依赖和注入" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/19/理解ng中的依赖和注入/">理解ng中的依赖和注入</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/19/理解ng中的依赖和注入/" class="archive-article-date">
+  	<time datetime="2017-07-19T12:38:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-19</time>
+</a>
+        
+      </header>
+    
+            <!-- 目录内容 -->
+             
+        <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Angularjs中的依赖注入"><a href="#Angularjs中的依赖注入" class="headerlink" title="Angularjs中的依赖注入"></a>Angularjs中的依赖注入</h2><h3 id="一：为什么要依赖注入？"><a href="#一：为什么要依赖注入？" class="headerlink" title="一：为什么要依赖注入？"></a>一：为什么要依赖注入？</h3><p>&emsp;&emsp;”依赖注入” ——，从字面意思上来说分为两个部分：一是依赖，二是注入。也就是说，当一个对象在建立时候，需要依赖于另一个对象，这是代码层的一种依赖关系；当在代码中声明了依赖关系之后，Angular通过injector注入器将所依赖的对象进行”注入”操作.</p>
+<h3 id="二：Angular的三种注入方式？"><a href="#二：Angular的三种注入方式？" class="headerlink" title="二：Angular的三种注入方式？"></a>二：Angular的三种注入方式？</h3><p>&emsp;&emsp;推断型注入、声明式注入(标注式注入)，内联注入,下面的例子中html只有一个<code>&lt;div&gt;gameName&lt;/div&gt;</code></p>
+<ul>
+<li><p>内联注入（最常用）</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">myModule.controller(<span class="string">'myCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span><span class="params">($scope1)</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span><span class="params">($scope1)</span></span>&#123;</div><div class="line">        $scope1.gameName = <span class="string">'棒棒'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+</li>
+<li><p>推断型注入(也就是吧里面的函数拿出来)</p>
+        
+          <a class="article-more-a" href="/2017/07/19/理解ng中的依赖和注入/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Angularjs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/19/理解ng中的依赖和注入/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-ng中定义service和filter的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/19/ng中定义service和filter的方法/">ng中定义service和filter的方法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/19/ng中定义service和filter的方法/" class="archive-article-date">
+  	<time datetime="2017-07-19T12:27:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-19</time>
+</a>
+        
+      </header>
+    
+            <!-- 目录内容 -->
+             
+        <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="angularjs子定义Service用法？"><a href="#angularjs子定义Service用法？" class="headerlink" title="angularjs子定义Service用法？"></a>angularjs子定义Service用法？</h3><h4 id="http的用法？"><a href="#http的用法？" class="headerlink" title="$http的用法？"></a>$http的用法？</h4><p>&emsp;&emsp;<code>$http</code>是Angularjs内置的服务，用起来可以链式调用，用法如下：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">myMdoule.controller(<span class="string">'LoadDataCtrl'</span>,[<span class="string">'$scope'</span>,<span class="string">'$http'</span>,<span class="function"><span class="keyword">function</span><span class="params">($scope,$http)</span></span>&#123;</div><div class="line">    $http(&#123;</div><div class="line">        method : <span class="string">'get'</span>,</div><div class="line">        url : <span class="string">'js/data.json'</span></div><div class="line">    &#125;).success(<span class="function"><span class="keyword">function</span><span class="params">(data,status,headers,config)</span></span>&#123;</div><div class="line">        console.<span class="built_in">log</span>(<span class="string">'success.....'</span>);</div><div class="line">        console.<span class="built_in">log</span>(data);</div><div class="line">        $scope.users = data;</div><div class="line">    &#125;).<span class="built_in">error</span>(<span class="function"><span class="keyword">function</span><span class="params">(data,status,headers,config)</span></span>&#123;</div><div class="line">            console.<span class="built_in">log</span>(<span class="string">'error'</span>);</div><div class="line">    &#125;)</div><div class="line">&#125;])</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2017/07/19/ng中定义service和filter的方法/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Angularjs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/19/ng中定义service和filter的方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -525,11 +659,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">react-native</a>
+                <a href="javascript:void(0)" class="js-tag color5">Angularjs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Angularjs</a>
+                <a href="javascript:void(0)" class="js-tag color3">react-native</a>
               </li>
              
               <li class="article-tag-list-item">
